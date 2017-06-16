@@ -1,0 +1,15 @@
+{
+  "name": "Coderdi",
+  "version": "1.0.0",
+  "homepage": "http://coderdi.ru",
+  "authors": "CoderDi",
+  "description": "My boilerplate for html+js+css apps",
+  "moduleType": [
+    "globals"
+  ],
+  "license": "MIT",
+  "dependencies": {
+    "normalize.css": "*",
+    "jquery": "2.*"
+  }
+}
