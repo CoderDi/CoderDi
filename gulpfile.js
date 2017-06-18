@@ -46,7 +46,7 @@ var config = {
     tunnel: true,
     host: 'localhost',
     port: 9000,
-    logPrefix: "Frontend_Devil"
+    logPrefix: "CoderDi"
 };
 
 gulp.task('webserver', function () {
