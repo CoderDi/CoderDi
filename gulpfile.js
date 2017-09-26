@@ -5,6 +5,8 @@ var gulp = require('gulp'),
     prefixer = require('gulp-autoprefixer'),
     uglify = require('gulp-uglify'),
     sass = require('gulp-sass'),
+    pug = require('gulp-pug'),
+    prettify = require('gulp-html-prettify'),
     sourcemaps = require('gulp-sourcemaps'),
     rigger = require('gulp-rigger'),
     cssmin = require('gulp-minify-css'),
@@ -12,7 +14,8 @@ var gulp = require('gulp'),
     pngquant = require('imagemin-pngquant'),
     rimraf = require('rimraf'),
     browserSync = require("browser-sync"),
-    reload = browserSync.reload;
+    reload = browserSync.reload,
+    plumber = require('gulp-plumber');
 
 var path = {
     build: {
@@ -23,14 +26,14 @@ var path = {
         fonts: 'build/fonts/'
     },
     src: {
-        html: 'src/*.html',
+        html: 'src/*.pug',
         js: 'src/js/main.js',
         style: 'src/style/main.scss',
         img: 'src/img/**/*.*',
         fonts: 'src/fonts/**/*.*'
     },
     watch: {
-        html: 'src/**/*.html',
+        html: 'src/**/*.pug',
         js: 'src/js/**/*.js',
         style: 'src/style/**/*.scss',
         img: 'src/img/**/*.*',
@@ -59,33 +62,35 @@ gulp.task('clean', function (cb) {
 
 gulp.task('html:build', function () {
     gulp.src(path.src.html) 
-        .pipe(rigger())
+        .pipe(plumber())
+        .pipe(pug())
+        .pipe(prettify({indent_char: ' ', indent_size: 2}))
         .pipe(gulp.dest(path.build.html))
         .pipe(reload({stream: true}));
 });
 
 gulp.task('js:build', function () {
-    gulp.src(path.src.js) 
-        .pipe(rigger()) 
-        .pipe(sourcemaps.init()) 
-        .pipe(uglify()) 
-        .pipe(sourcemaps.write()) 
+    gulp.src(path.src.js)
         .pipe(gulp.dest(path.build.js))
         .pipe(reload({stream: true}));
 });
 
 gulp.task('style:build', function () {
-    gulp.src(path.src.style) 
-        .pipe(sourcemaps.init())
-        .pipe(sass())
+    gulp.src(path.src.style)
+        .pipe(plumber())
+        .pipe(sass({includePaths: require('node-normalize-scss').includePaths}))
         .pipe(prefixer())
-        .pipe(cssmin())
-        .pipe(sourcemaps.write('.'))
         .pipe(gulp.dest(path.build.css))
         .pipe(reload({stream: true}));
 });
 
 gulp.task('image:build', function () {
+    gulp.src(path.src.img) 
+        .pipe(gulp.dest(path.build.img))
+        .pipe(reload({stream: true}));
+});
+
+gulp.task('image:min', function () {
     gulp.src(path.src.img) 
         .pipe(imagemin({
             progressive: true,
