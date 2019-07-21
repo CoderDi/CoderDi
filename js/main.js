@@ -1,50 +1,44 @@
 $(document).ready(function () {
-  var activeScreen = 1;
-
   $(".butter").click(function(){
     $(this).toggleClass("butter-hover");
     $(".menu").toggleClass("menu-open");
   });
 
   $(".slide-arrow").click(function(){
-    if ((activeScreen + 1) > $(".screen").length) return;
-    $("#screen" + activeScreen).css("top","-50%");
-    activeScreen++;
-    $("#screen" + activeScreen).css("top","0");
-    
-    $(".slide-arrow").removeClass("slide-arrow--right");
+    $.fn.fullpage.moveSectionDown();
   });
 
-  document.onkeydown = checkKey;
-  function checkKey(e) {
-      e = e || window.event;
-      if (e.keyCode == '38') {
-        if (activeScreen == 1) return;
-        $("#screen" + activeScreen).css("top","100%");
-        activeScreen--;
-        $("#screen" + activeScreen).css("top","0");
-      }
-      else if (e.keyCode == '40') {
-        if ((activeScreen + 1) > $(".screen").length) return;
-        $("#screen" + activeScreen).css("top","-50%");
-        activeScreen++;
-        $("#screen" + activeScreen).css("top","0");
-      }
-  }
-
   $(".screen__btn").click(function(){
+    $.fn.fullpage.setAllowScrolling(false);
+    $.fn.fullpage.setKeyboardScrolling(false);
     var then = $(this).parents(".screen-part");
     $(then).css("width","100%");
     $(this).parents(".screen").find(".screen-left").css("left","-50%");
-    $(then).find(".screen_block-hide").css("max-height", $(then).find(".screen_block-hide").outerHeight());
+    $(".slide-arrow").addClass("slide-arrow--hide");
     setTimeout(function(){
       $(then).addClass("screen-open");
-    $(".slide-arrow").addClass("slide-arrow--right");
+      $(then).find(".screen-content").addClass("screen-content--hide");
+    }, 500);
+  });
+
+  $(".screen-part__close").click(function(){
+    $.fn.fullpage.setAllowScrolling(true);
+    $.fn.fullpage.setKeyboardScrolling(true);
+    var then = $(this).parents(".screen-part");
+    $(then).removeClass("screen-open");
+    setTimeout(function(){
+      $(then).css("width","50%");
+      $(then).parents(".screen").find(".screen-left").css("left","0");
+      $(then).find(".screen-content").removeClass("screen-content--hide");
+      $(".slide-arrow").removeClass("slide-arrow--hide");
     }, 500);
     
   });
-  
 
+
+  $('#fullpage').fullpage({
+    
+  });
 
 
   $("a[href^='#']").click(function(){
