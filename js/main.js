@@ -67,6 +67,24 @@ $(document).ready(function () {
   });
 
 
+  $(".service").hover(function(){
+    $(this).find(".service__text").slideToggle(200)
+  });
+
+  $('.js-reviews-slider').slick({
+    adaptiveHeight: true,
+    infinite: false
+  });
+  $('.js-reviews-slider').on('beforeChange', function(event, slick, currentSlide, nextSlide){
+    $('.review__photo[data-photo=' + (nextSlide + 1) + ']').attr("data-photo", 6);
+    $(".review__photo.active").attr("data-photo", nextSlide + 1).removeClass("active");
+    $('.review__photo[data-photo=6]').addClass("active");
+  });
+
+  $(".review__photo").on("click", function(){
+    $('.js-reviews-slider').slick("slickGoTo", parseInt($(this).attr("data-photo"))-1);
+  });
+
 
   $("a[href^='#']").click(function(){
     var _href = $(this).attr("href");

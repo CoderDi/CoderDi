@@ -1,0 +1,108 @@
+.portfolio__list
+  padding-top: 40px
+.item
+  margin-bottom: 30px
+.item__container
+  display: flex
+  overflow: hidden
+  border-radius: 10px
+  background: #fff
+  box-shadow: 0 0 6px 0 rgba(0, 0, 0, 0.04), 0 4px 10px 0 rgba(13, 13, 40, 0.25)
+.item__img
+  width: 50%
+  display: flex
+  align-items: center
+  justify-content: center
+  position: relative
+  img
+    max-width: 90%
+    max-height: 90%
+.item--hishnik
+  .item__container
+    background: #36A200
+  .item__img
+    background: #87D085
+.item--evacuator
+  .item__container
+    background: #1B2034
+  .item__img
+    background: url(../images/evacuator.jpg) no-repeat center
+    background-size: cover
+    &::after
+      position: absolute
+      top: 0
+      left: 0
+      width: 100%
+      height: 100%
+      content: ''
+      background: url(../images/evacuator-pattern.png), rgba(0, 0, 0, 0.5)
+.item--alexandrova
+  .item__container
+    background: #09c
+  .item__img
+    background: url(../images/bg-table.jpg) no-repeat center
+    background-size: cover
+    &::after
+      position: absolute
+      content: ''
+      height: 31px
+      width: 100%
+      bottom: 0
+      left: 0
+      background: url(../images/bg-bottom.png) no-repeat center bottom
+.item__label
+  display: inline-block
+  font-size: 18px
+  color: #ffffff
+  font-weight: 400
+  cursor: default
+  &::after
+    content: '|'
+    color: #ffffff
+    display: inline-block
+    padding-left: 5px
+    padding-right: 2px
+  &:last-child::after
+    display: none
+.item__title
+  position: relative
+  font-size: 44px
+  color: #ffffff
+  font-weight: 700
+  margin: 20px 0 50px
+  &::after
+    position: absolute
+    content: ''
+    width: 54px
+    height: 6px
+    background: #ffffff
+    left: calc(50% - 27px)
+    bottom: -15px
+    transition: .5s ease-in-out
+.item__text
+  max-width: 450px
+  padding: 0 20px
+  font-size: 18px
+  color: #ffffff
+  font-weight: 300
+  line-height: 24px
+  margin: 0 auto 35px
+.item__btn
+  display: inline-block
+  background: #E34925
+  border-radius: 7px
+  font-size: 16px
+  height: 50px
+  line-height: 50px
+  color: #ffffff
+  text-transform: uppercase
+  padding: 0 23px
+  cursor: pointer
+  transition: .2s ease-in-out
+  &:hover
+    background: #DB4522
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.25)
+.item__content
+  width: 50%
+  text-align: center
+  padding: 50px 20px

@@ -1,0 +1,134 @@
+.contacts
+  padding: 60px 0
+  &__flex
+    display: flex
+    justify-content: space-between
+  &__left
+    width: 50%
+    padding-right: 60px
+  &__right
+    width: 50%
+  &__title
+    font-size: 24px
+    color: #000
+    margin-bottom: 30px
+    display: block
+  &__block
+    margin-bottom: 30px
+    strong
+      font-size: 20px
+      color: #000
+      margin-right: 15px
+  &__link
+    display: inline-block
+    color: #577BF9;
+    font-size: 18px
+    &:hover
+      text-decoration: underline
+
+.form
+  width: 100%
+  display: block
+.label
+  display: block
+  margin-bottom: 40px
+  position: relative
+  cursor: text
+  > span
+    position: absolute
+    display: flex
+    align-items: center
+    padding-left: 15px
+    font-size: 16px
+    color: #000
+    top: 0
+    left: 0
+    width: 100%
+    height: 38px
+    background: #fff
+    pointer-events: none
+    transition: .1s ease-in-out
+    span
+      font-size: 14px
+.input
+  font-family: 'Ubuntu'
+  background: transparent
+  border: none
+  border-bottom: 2px solid #577BF9;
+  width: 100%
+  height: 40px
+  padding: 0 15px
+  font-size: 18px
+  color: #000
+.label .input
+  &:focus + span, &:valid + span
+    top: -30px
+    font-size: 12px
+    background: transparent
+.textarea
+  height: auto
+  min-height: 120px
+  padding-top: 10px
+  resize: vertical
+.input:invalid
+  box-shadow: none
+.red
+  color: #E34925
+.submit
+  cursor: pointer
+  font-size: 18px
+  &:hover
+    background: transparent
+    color: #577BF9;
+
+
+
+.popup
+  position: fixed
+  z-index: 99
+  top: 100%
+  left: 0
+  width: 100%
+  height: 100vh
+  background: #fff
+  transition: .5s ease-in-out
+  box-shadow: 0 0 6px 0 rgba(0, 0, 0, 0.04), 0 4px 10px 0 rgba(13, 13, 40, 0.25)
+  &.active
+    top: 0
+  &__header
+    background: #577BF9
+    &_wrapper
+      min-height: 60px
+      padding: 15px 0
+    &_title
+      margin: 0
+      color: #ffffff
+      font-size: 20px
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3)
+      line-height: 1.4
+
+.close
+  position: relative
+  display: block
+  width: 24px
+  height: 24px
+  cursor: pointer
+  transform: rotate(45deg)
+  transition: .5s ease-in-out
+  &::before, &::after
+    position: absolute
+    content: ''
+    border-radius: 3px
+    background: #fff
+  &::before
+    width: 24px
+    height: 4px
+    top: 10px
+    left: 0
+  &::after
+    top: 0
+    left: 10px
+    height: 24px
+    width: 4px
+  &:hover
+    transform: rotate(405deg)

@@ -1,0 +1,75 @@
+@import url("https://fonts.googleapis.com/css?family=Ubuntu:300,400,500,700&display=swap&subset=cyrillic")
+*
+  font-family: 'Ubuntu'
+  box-sizing: border-box
+  outline: none
+  text-decoration: none
+.no-scroll
+  overflow: hidden
+  padding-right: 17px
+.wrapper
+  width: 100%
+  max-width: 1170px
+  margin: 0 auto
+  padding: 0 10px
+.flex
+  display: flex
+  align-items: center
+  justify-content: space-between
+.section
+  padding: 60px 0
+  &__title
+    margin: 0 0 30px
+    text-align: center
+    font-size: 28px
+    line-height: 1.4
+    color: #131340
+    position: relative
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3)
+    &::before
+      position: absolute
+      content: ''
+      width: 60px
+      height: 3px
+      background: #577BF9
+      bottom: -15px
+      left: calc(50% - 30px)
+    &.white::before
+      background: #fff
+  &__subtitle
+    color: #131340
+    font-size: 18px
+    line-height: 1.4
+    display: block
+    margin-bottom: 40px
+    font-weight: 400
+    text-align: center
+
+.btn
+  cursor: pointer
+  display: flex
+  justify-content: center
+  align-items: center
+  width: 220px
+  height: 40px
+  background: #577BF9;
+  border-radius: 4px;
+  border: 2px solid #577BF9;
+  font-weight: bold;
+  font-size: 14px;
+  line-height: 16px;
+  text-align: center;
+  color: #FFFFFF;
+  margin: 0 auto
+  &:hover
+    color: #577BF9;
+    background: transparent
+
+
+
+
+
+
+
+
+

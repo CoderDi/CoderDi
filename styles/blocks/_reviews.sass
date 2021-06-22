@@ -1,0 +1,150 @@
+.review
+  &__container
+    max-width: 550px
+    margin: 0 auto
+    text-align: center
+  &__author
+    display: block
+    margin-bottom: 5px
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 28px;
+    color: #000000;
+  &__span
+    font-weight: 300;
+    font-size: 16px;
+    line-height: 19px;
+    color: #000000;
+  &__text
+    margin: 25px 0 0
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 21px;
+    color: #000000;
+  &s
+    &__slider
+      margin-bottom: 105px
+      .slick
+        &-arrow
+          position: absolute
+          bottom: -50px
+          z-index: 2
+          width: 24px
+          height: 24px
+          background: url(../images/icons.svg#arrow) no-repeat center
+          background-size: contain
+          border: none
+          box-shadow: none
+          font-size: 0
+          color: transparent
+          cursor: pointer
+          &:hover
+            background-image: url(../images/icons.svg#arrow-hover)
+        &-prev
+          right: calc(50% + 10px)
+        &-next
+          transform: rotate(180deg)
+          left: calc(50% + 10px)
+    &__footer
+      text-align: center
+      &_title
+        display: block
+        margin-bottom: 15px
+        font-weight: bold;
+        font-size: 24px;
+        line-height: 28px;
+        color: #577BF9;
+      &_subtitle
+        display: block
+        margin-bottom: 25px
+        font-weight: normal;
+        font-size: 18px;
+        line-height: 21px;
+        color: #000000;
+    &__photo
+      &s
+        position: relative
+        height: 320px
+        margin: 0 auto 20px
+        max-width: 800px
+  &__photo
+    position: absolute
+    width: 60px
+    height: 60px
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.25)
+    border-radius: 100%
+    cursor: pointer
+    transition: .5s
+    &[data-photo="1"]
+      top: 0
+      left: 50%
+      transform: translateX(-50%)
+    &[data-photo="2"]
+      top: 55px
+      left: 25%
+      transform: translateX(-75%)
+    &[data-photo="3"]
+      top: 55px
+      left: 75%
+      transform: translateX(-25%)
+    &[data-photo="4"]
+      width: 80px
+      height: 80px
+      left: 0
+      top: 190px
+    &[data-photo="5"]
+      left: 30%
+      top: 200px
+      transform: translateX(-70%)
+    &[data-photo="7"]
+      left: 70%
+      top: 200px
+      transform: translateX(-30%)
+    &[data-photo="8"]
+      width: 80px
+      height: 80px
+      left: calc(100% - 80px)
+      top: 190px
+    img
+      display: block
+      border-radius: 100%
+      width: 100%
+      height: 100%
+      object-fit: cover
+    &[data-photo="6"]
+      width: 180px
+      height: 180px
+      top: 140px
+      left: 50%
+      transform: translateX(-50%)
+      &::after
+        position: absolute
+        top: 0
+        right: 0
+        content: ''
+        width: 50px
+        height: 50px
+        border-radius: 100%
+        background: url(../images/icons.svg#review-icon) no-repeat center, #577BF9;
+        background-size: 26px 26px
+      img
+        display: block
+        border-radius: 100%
+        width: 100%
+        height: 100%
+        object-fit: cover
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,81 @@
+.banner
+  padding-left: 80px
+  &__wrapper
+    position: relative
+    min-height: 100vh
+    padding: 60px 0
+    display: flex
+    flex-direction: column
+  &__content
+    flex-grow: 2
+    display: flex
+    align-items: center
+    justify-content: space-between
+    &_img
+      flex-shrink: 0
+      width: 44%
+      height: auto
+      display: block
+      margin-left: 30px
+    &_span
+      display: block
+      font-weight: normal;
+      font-size: 16px;
+      line-height: 1;
+      color: #7C7C7C;
+    &_name
+      display: block
+      margin: 10px 0 30px
+      font-weight: bold;
+      font-size: 52px;
+      line-height: 56px;
+      color: #577BF9;
+    &_desc
+      display: block
+      max-width: 400px
+      font-weight: normal;
+      font-size: 20px;
+      line-height: 1.4;
+      color: #000000;
+  &__header
+    position: absolute
+    width: 100%
+    left: 0
+    top: 0
+    padding: 20px 0
+    justify-content: flex-end
+    &_link
+      display: inline-block
+      font-weight: normal;
+      font-size: 18px;
+      line-height: 21px;
+      color: #577BF9;
+      padding-left: 34px
+      background: url(../images/icons.svg#mail) no-repeat left 3px
+      background-size: 24px 16px
+      &:hover
+        text-decoration: underline
+  &__socials
+    margin-right: 25px
+    justify-content: start
+    &_item
+      display: block
+      width: 24px
+      height: 24px
+      margin-right: 25px
+      background-repeat: no-repeat
+      background-size: 24px 24px
+      background-position: center
+      transition: .1s
+      &:hover
+        transform: scale(1.1)
+      &--telegram
+        background-image: url(../images/icons.svg#telegram)
+      &--skype
+        background-image: url(../images/icons.svg#skype)
+      &--github
+        background-image: url(../images/icons.svg#github)
+
+
+
+
