@@ -1,5 +1,5 @@
 .banner
-  padding-left: 80px
+  // padding-left: 80px
   &__wrapper
     position: relative
     min-height: 100vh
@@ -75,6 +75,37 @@
         background-image: url(../images/icons.svg#skype)
       &--github
         background-image: url(../images/icons.svg#github)
+  &__footer
+    display: flex
+    justify-content: space-between
+    &_item
+      align-content: center
+      justify-content: center
+      text-align: center
+      display: flex
+      width: 165px
+      height: 160px
+      flex-wrap: wrap
+      background: #577BF9;
+      border-radius: 72px
+      &:first-child
+        border-radius: 0 72px
+      &:last-child
+        border-radius: 72px 0
+      strong
+        font-weight: bold;
+        font-size: 48px;
+        line-height: 56px;
+        text-align: center
+        color: #FFFFFF;
+        display: block
+        width: 100%
+      span
+        font-weight: bold;
+        font-size: 18px;
+        line-height: 21px;
+        text-align: center
+        color: #FFFFFF;
 
 
 

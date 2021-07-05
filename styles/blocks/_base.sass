@@ -44,7 +44,8 @@
     margin-bottom: 40px
     font-weight: 400
     text-align: center
-
+body
+  padding-left: 80px
 .btn
   cursor: pointer
   display: flex
@@ -65,7 +66,69 @@
     color: #577BF9;
     background: transparent
 
+.check
+  display: flex
+  cursor: pointer
+  margin-bottom: 30px
+  input
+    display: none
+    &:checked ~ .check-custom
+      &::before
+        opacity: 1
+  &-custom
+    position: relative
+    display: block
+    width: 20px
+    height: 20px
+    margin-right: 15px
+    background: transparent
+    border: 2px solid #577BF9;
+    border-radius: 4px;
+    flex-shrink: 0
+    &::before
+      position: absolute
+      content: ''
+      top: 0
+      left: 0
+      bottom: 0
+      right: 0
+      background: #577BF9;
+      border: 2px solid #fff
+      border-radius: 4px
+      opacity: 0
+  &-text
+    font-weight: bold;
+    font-size: 14px;
+    line-height: 20px;
+    color: #577BF9;
+    display: block
+    text-align: left
+    a
+      color: #577BF9;
+      &:hover
+        text-decoration: underline
 
+.file
+  display: flex
+  align-items: center
+  margin-bottom: 20px
+  cursor: pointer
+  input
+    display: none
+    &.loaded ~ .file-custom
+      
+  &-custom
+    width: 40px
+    height: 40px
+    margin-right: 15px
+    background: url(../images/icons.svg#file) no-repeat center, #577BF9;
+    background-size: 24px 24px
+    border-radius: 4px;
+  &-text
+    font-weight: bold;
+    font-size: 14px;
+    line-height: 16px;
+    color: #577BF9;
 
 
 
