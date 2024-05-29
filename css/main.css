@@ -677,22 +677,20 @@ td, th {
 }
 
 :root {
+  /** sunny side **/
   --blue-background: #C2E9F6;
   --blue-border: #72cce3;
   --blue-color: #96dcee;
   --yellow-background: #fffaa8;
   --yellow-border: #f5eb71;
+  /** dark side **/
   --indigo-background: #808fc7;
   --indigo-border: #5d6baa;
   --indigo-color: #6b7abb;
   --gray-border: #e8e8ea;
   --gray-dots: #e8e8ea;
+  /** general **/
   --white: #fff;
-}
-
-* {
-  padding: 0;
-  margin: 0;
 }
 
 .background {
@@ -710,28 +708,42 @@ td, th {
 .toggle--checkbox {
   display: none;
 }
+
+.toggle--checkbox:checked {
+  /** This will all flip from sun to moon **/
+  /** Change the label color **/
+}
+
 .toggle--checkbox:checked ~ .background {
   background: var(--indigo-background);
 }
+
 .toggle--checkbox:checked + .toggle--label {
   background: var(--indigo-color);
   border-color: var(--indigo-border);
+  /** Change the cloud to stars **/
+  /** Change the sun into the moon **/
+  /** Show the dimples on the moon **/
 }
+
 .toggle--checkbox:checked + .toggle--label .toggle--label-background {
   left: 60px;
   width: 5px;
 }
+
 .toggle--checkbox:checked + .toggle--label .toggle--label-background:before {
   width: 5px;
   height: 5px;
   top: -25px;
 }
+
 .toggle--checkbox:checked + .toggle--label .toggle--label-background:after {
   width: 5px;
   height: 5px;
   left: -30px;
   top: 20px;
 }
+
 .toggle--checkbox:checked + .toggle--label:before {
   background: var(--white);
   border-color: var(--gray-border);
@@ -742,6 +754,7 @@ td, th {
   -webkit-animation-fill-mode: forwards;
           animation-fill-mode: forwards;
 }
+
 .toggle--checkbox:checked + .toggle--label:after {
   -webkit-transition-delay: 350ms;
           transition-delay: 350ms;
@@ -749,6 +762,7 @@ td, th {
 }
 
 .toggle--label {
+  /** Placeholder element, starting at blue **/
   width: 200px;
   height: 100px;
   background: var(--blue-color);
@@ -760,7 +774,49 @@ td, th {
   position: relative;
   -webkit-transition: all 350ms ease-in;
   transition: all 350ms ease-in;
+  /** The sun cloud and moon stars **/
+  /** Sun/Moon element **/
+  /** Gray dots on the moon **/
 }
+
+.toggle--label-background {
+  width: 10px;
+  height: 5px;
+  border-radius: 5px;
+  position: relative;
+  background: var(--white);
+  left: 135px;
+  top: 45px;
+  -webkit-transition: all 150ms ease-in;
+  transition: all 150ms ease-in;
+}
+
+.toggle--label-background:before {
+  content: "";
+  position: absolute;
+  top: -5px;
+  width: 40px;
+  height: 5px;
+  border-radius: 5px;
+  background: var(--white);
+  left: -20px;
+  -webkit-transition: all 150ms ease-in;
+  transition: all 150ms ease-in;
+}
+
+.toggle--label-background:after {
+  content: "";
+  position: absolute;
+  top: 5px;
+  width: 40px;
+  height: 5px;
+  border-radius: 5px;
+  background: var(--white);
+  left: -10px;
+  -webkit-transition: all 150ms ease-in;
+  transition: all 150ms ease-in;
+}
+
 .toggle--label:before {
   -webkit-animation-name: reverse;
           animation-name: reverse;
@@ -774,12 +830,13 @@ td, th {
   width: 82px;
   height: 82px;
   border: 5px solid var(--yellow-border);
-  top: 4px;
-  left: 4px;
+  top: 0px;
+  left: 0px;
   position: absolute;
   border-radius: 82px;
   background: var(--yellow-background);
 }
+
 .toggle--label:after {
   -webkit-transition-delay: 0ms;
           transition-delay: 0ms;
@@ -798,73 +855,31 @@ td, th {
   opacity: 0;
 }
 
-.toggle--label-background {
-  width: 10px;
-  height: 5px;
-  border-radius: 5px;
-  position: relative;
-  background: var(--white);
-  left: 135px;
-  top: 45px;
-  -webkit-transition: all 150ms ease-in;
-  transition: all 150ms ease-in;
-}
-.toggle--label-background:before {
-  content: "";
-  position: absolute;
-  top: -5px;
-  width: 40px;
-  height: 5px;
-  border-radius: 5px;
-  background: var(--white);
-  left: -20px;
-  -webkit-transition: all 150ms ease-in;
-  transition: all 150ms ease-in;
-}
-.toggle--label-background:after {
-  content: "";
-  position: absolute;
-  top: 5px;
-  width: 40px;
-  height: 5px;
-  border-radius: 5px;
-  background: var(--white);
-  left: -10px;
-  -webkit-transition: all 150ms ease-in;
-  transition: all 150ms ease-in;
-}
-
 @-webkit-keyframes switch {
   0% {
-    left: 4px;
+    left: 0;
   }
   60% {
-    left: 4px;
-    width: 112px;
-    left: 72px;
+    left: 0;
     width: 112px;
   }
   100% {
     left: 104px;
     width: 82px;
-    left: 4px;
   }
 }
 
 @keyframes switch {
   0% {
-    left: 4px;
+    left: 0;
   }
   60% {
-    left: 4px;
-    width: 112px;
-    left: 72px;
+    left: 0;
     width: 112px;
   }
   100% {
     left: 104px;
     width: 82px;
-    left: 4px;
   }
 }
 @-webkit-keyframes reverse {
@@ -872,11 +887,25 @@ td, th {
     left: 104px;
     width: 82px;
   }
+  60% {
+    left: 72px;
+    width: 112px;
+  }
+  100% {
+    left: 0;
+  }
 }
 @keyframes reverse {
   0% {
     left: 104px;
     width: 82px;
+  }
+  60% {
+    left: 72px;
+    width: 112px;
+  }
+  100% {
+    left: 0;
   }
 }
 .portfolio__all-btn {
