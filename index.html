@@ -1,85 +1,62 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>CoderDi | Портфолио фрилансера вебразработчика</title>
-  
+  <link rel="shortcut icon" href="favicon.svg" type="image/x-icon">
+  <link rel="stylesheet" href="libs/slick/slick.css">
+  <link rel="stylesheet" href="libs/aos/aos.css">
   <link rel="stylesheet" href="css/main.css">
 </head>
+
 <body>
-  <div class="menu">
-    <a href="/" class="logo flex">
-      <img src="images/icons.svg#logo" alt="">
-      <strong>CoderDi</strong>
-    </a>
+  <header class="header">
+    <div class="wrapper">
+      <div class="header-container flex">
+        <a href="#top" class="header-logo">
+          <span>CoderDi<span>
+              <img src="images/icons.svg#logo-blue" alt="">
+        </a>
+        <div class="banner__socials flex">
+          <a href="https://t.me/coderdi" target="_blank"
+            class="banner__socials_item banner__socials_item--telegram"></a>
+          <a href="https://github.com/CoderDi" target="_blank"
+            class="banner__socials_item banner__socials_item--github"></a>
+          <a href="https://kwork.ru/user/coderdi" target="_blank"
+            class="banner__socials_item banner__socials_item--kwork"></a>
+          <a href="mailto:dmitrybuldakov@yandex.ru" target="_blank"
+            class="banner__socials_item banner__socials_item--email"></a>
+        </div>
 
-    <ul class="menu__list">
-      <li class="menu__item">
-        <a href="#services" class="menu__link">
-          <img src="images/icons.svg#services" alt="">
-          <span>Услуги</span>
-        </a>
-      </li>
-      <li class="menu__item">
-        <a href="#portfolio" class="menu__link">
-          <img src="images/icons.svg#portfolio" alt="">
-          <span>Портфолио</span>
-        </a>
-      </li>
-      <li class="menu__item">
-        <a href="#reviews" class="menu__link">
-          <img src="images/icons.svg#reviews" alt="">
-          <span>Отзывы</span>
-        </a>
-      </li>
-      <li class="menu__item">
-        <a href="#blog" class="menu__link">
-          <img src="images/icons.svg#blog" alt="">
-          <span>Блог</span>
-        </a>
-      </li>
-      <li class="menu__item">
-        <a href="#contacts" class="menu__link">
-          <img src="images/icons.svg#contacts" alt="">
-          <span>Контакты</span>
-        </a>
-      </li>
-    </ul>
-
-    <div class="menu__langs">
-      <!-- <a href="#" class="menu__lang">RU</a>
-      <a href="#" class="menu__lang">EN</a> -->
+        <div class="day-night">
+          <input type="checkbox" id="toggle" class="toggle--checkbox">
+          <label for="toggle" class="toggle--label">
+            <span class="toggle--label-background"></span>
+          </label>
+          <div class="background"></div>
+        </div>
+      </div>
     </div>
-  </div>
+  </header>
 
   <section class="banner">
     <div class="wrapper">
       <div class="banner__wrapper">
-        <header class="banner__header flex">
-          <div class="banner__socials flex">
-            <a href="@coderdi" class="banner__socials_item banner__socials_item--telegram"></a>
-            <a href="" class="banner__socials_item banner__socials_item--skype"></a>
-            <a href="" class="banner__socials_item banner__socials_item--github"></a>
-          </div>
-          <div class="banner__header_contacts">
-            <a href="mailto:dmitrybuldakov@yandex.ru" class="banner__header_link header__mail">dmitrybuldakov@yandex.ru</a>
-          </div>
-        </header>
 
         <div class="banner__content">
-          <div class="banner__content_text">
-            <span class="banner__content_span">Меня зовут</span>
-            <strong class="banner__content_name">Дмитрий Булдаков</strong>
-            <span class="banner__content_desc">Я Web-разработчик, делаю крутые сайты 
+          <div class="banner__content_text" data-aos="fade-right">
+            <strong class="banner__content_name">👋 Привет! <br> Меня зовут Дмитрий. </strong>
+            <span class="banner__content_desc">Я Web-разработчик, делаю крутые сайты
               для всех типов устройств:)</span>
           </div>
 
-          <img src="images/banner-img.png" alt="" class="banner__content_img">
+          <img src="images/banner-img.png" alt="" class="banner__content_img" data-aos="fade-left">
         </div>
 
-        <footer class="banner__footer">
+        <!-- <footer class="banner__footer">
           <div class="banner__footer_item">
             <strong>>4</strong>
             <span>лет <br>
@@ -97,46 +74,60 @@
             <span>довольных <br>
               заказчиков</span>
           </div>
-        </footer>
+        </footer> -->
       </div>
     </div>
   </section>
 
-  <section class="section instruments">
+  <section class="section instruments" data-aos="fade-up" data-aos="fade-up">
     <div class="wrapper">
       <h2 class="section__title">Инструменты и технологии</h2>
       <strong class="section__subtitle">Все то, что помогает мне ежедневно работать и создавать сайты</strong>
 
       <div class="instruments__list">
-        <a href="" class="instrument" target="_blank" title="figma"><img width="67" height="70"  src="images/icons.svg#figma" alt=""></a>
+        <a href="" class="instrument" target="_blank" title="figma"><img width="67" height="70"
+            src="images/icons.svg#figma" alt=""></a>
         <div class="instrument-block">
-          <a href="" class="instrument" target="_blank" title="photoshop"><img width="68" height="70" src="images/icons.svg#photoshop" alt=""></a>
-          <a href="" class="instrument" target="_blank" title="avocode"><img width="50" height="70" src="images/icons.svg#avocode" alt=""></a>
+          <a href="" class="instrument" target="_blank" title="photoshop"><img width="68" height="70"
+              src="images/icons.svg#photoshop" alt=""></a>
+          <a href="" class="instrument" target="_blank" title="avocode"><img width="50" height="70"
+              src="images/icons.svg#avocode" alt=""></a>
         </div>
-        <a href="" class="instrument" target="_blank" title="vs code"><img width="65" height="68" src="images/icons.svg#vscode" alt=""></a>
+        <a href="" class="instrument" target="_blank" title="vs code"><img width="65" height="68"
+            src="images/icons.svg#vscode" alt=""></a>
         <div class="instrument-block">
-          <a href="" class="instrument" target="_blank" title="html5"><img width="60" height="70" src="images/icons.svg#html5" alt=""></a>
-          <a href="" class="instrument" target="_blank" title="pug"><img width="67" height="60" src="images/icons.svg#pug" alt=""></a>
+          <a href="" class="instrument" target="_blank" title="html5"><img width="60" height="70"
+              src="images/icons.svg#html5" alt=""></a>
+          <a href="" class="instrument" target="_blank" title="pug"><img width="67" height="60"
+              src="images/icons.svg#pug" alt=""></a>
         </div>
         <div class="instrument-block">
-          <a href="" class="instrument" target="_blank" title="css3"><img width="58" height="70" src="images/icons.svg#css3" alt=""></a>
-          <a href="" class="instrument" target="_blank" title="sass"><img width="70" height="70" src="images/icons.svg#sass" alt=""></a>
+          <a href="" class="instrument" target="_blank" title="css3"><img width="58" height="70"
+              src="images/icons.svg#css3" alt=""></a>
+          <a href="" class="instrument" target="_blank" title="sass"><img width="70" height="70"
+              src="images/icons.svg#sass" alt=""></a>
         </div>
         <div class="instrument-block">
-          <a href="" class="instrument" target="_blank" title="js"><img width="59" height="70" src="images/icons.svg#js" alt=""></a>
-          <a href="" class="instrument" target="_blank" title="jquery"><img width="67" height="68" src="images/icons.svg#jquery" alt=""></a>
+          <a href="" class="instrument" target="_blank" title="js"><img width="59" height="70" src="images/icons.svg#js"
+              alt=""></a>
+          <a href="" class="instrument" target="_blank" title="jquery"><img width="67" height="68"
+              src="images/icons.svg#jquery" alt=""></a>
         </div>
-        <a href="" class="instrument" target="_blank" title="bootstrap"><img width="70" height="70" src="images/icons.svg#bootstrap" alt=""></a>
+        <a href="" class="instrument" target="_blank" title="bootstrap"><img width="70" height="70"
+            src="images/icons.svg#bootstrap" alt=""></a>
         <div class="instrument-block">
-          <a href="" class="instrument" target="_blank" title="wordpress"><img width="67" height="70" src="images/icons.svg#wordpress" alt=""></a>
-          <a href="" class="instrument" target="_blank" title="php"><img width="70" height="47" src="images/icons.svg#php" alt=""></a>
+          <a href="" class="instrument" target="_blank" title="wordpress"><img width="67" height="70"
+              src="images/icons.svg#wordpress" alt=""></a>
+          <a href="" class="instrument" target="_blank" title="php"><img width="70" height="47"
+              src="images/icons.svg#php" alt=""></a>
         </div>
-        <a href="" class="instrument" target="_blank" title="github"><img width="69" height="70" src="images/icons.svg#github2" alt=""></a>
+        <a href="" class="instrument" target="_blank" title="github"><img width="69" height="70"
+            src="images/icons.svg#github2" alt=""></a>
       </div>
     </div>
   </section>
 
-  <section class="section services" id="services">
+  <section class="section services" data-aos="fade-up" id="services">
     <div class="wrapper">
       <h2 class="section__title">Услуги</h2>
       <strong class="section__subtitle">Выполняю следующие работы</strong>
@@ -149,9 +140,10 @@
               <img src="images/icons.svg#service1" alt="" class="service__img">
             </div>
             <div class="service__text">
-              Верстка HTML-сайта (лендинги, многостраничные сайты интернет-магазины) из макета Photoshop, Figma, Adobe XD. <br>
+              Верстка HTML-сайта (лендинги, многостраничные сайты интернет-магазины) из макета Photoshop, Figma, Adobe
+              XD. <br>
               Валидно, кроссбраузерно, адаптивно. <br>
-              Полная работоспособность в HTML Вашего макета.             
+              Полная работоспособность в HTML Вашего макета.
             </div>
           </div>
         </div>
@@ -164,7 +156,7 @@
             </div>
             <div class="service__text">
               Разработка дизайна по Вашему прототипу и ТЗ либо “сделай как у конкурентов, только лучше”.
-              Конечным продуктом, являются макеты Figma, готовые для верстки шаблона. 
+              Конечным продуктом, являются макеты Figma, готовые для верстки шаблона.
             </div>
           </div>
         </div>
@@ -172,13 +164,13 @@
         <div class="service">
           <div class="service-container">
             <div class="service__header">
-              <strong class="service__title">Сайт 
+              <strong class="service__title">Сайт
                 на WordPress</strong>
               <img src="images/icons.svg#service3" alt="" class="service__img">
             </div>
             <div class="service__text">
               Создание сайта на Wordpress как по вашему дизайну и верстке, так и с нуля под ключ. <br>
-              Наполнение сайта конентом - текстовой, графической информацией. 
+              Наполнение сайта конентом - текстовой, графической информацией.
             </div>
           </div>
         </div>
@@ -191,9 +183,12 @@
               <img src="images/icons.svg#service4" alt="" class="service__img">
             </div>
             <div class="service__text">
-              1. Установка, доработка дополнительного функционала: калькулятор, фотогалерея, слайдер, карта сайта, формы для связи и т.д. <br>
-              2. Оптимизация сайта: скорость загрузки, оптимизация сайта для лучшей индексации поисковыми системами: HTML и CSS валидация, корректировка кода и пр. <br>
-              3. Наполнение сайта Вашим контентом: товарами интернет-магазина, текстовой информацией, графической информации. <br>
+              1. Установка, доработка дополнительного функционала: калькулятор, фотогалерея, слайдер, карта сайта, формы
+              для связи и т.д. <br>
+              2. Оптимизация сайта: скорость загрузки, оптимизация сайта для лучшей индексации поисковыми системами:
+              HTML и CSS валидация, корректировка кода и пр. <br>
+              3. Наполнение сайта Вашим контентом: товарами интернет-магазина, текстовой информацией, графической
+              информации. <br>
               4. Регистрация домена, хостинга, установка Вашего сайта на хостинг. <br>
               5. Администрирование и сопровождение Вашего сайта.
             </div>
@@ -203,13 +198,13 @@
     </div>
   </section>
 
-  <section class="section portfolio" id="portfolio">
+  <section class="section portfolio" data-aos="fade-up" id="portfolio">
     <div class="wrapper">
       <h2 class="section__title">Портфолио</h2>
       <strong class="section__subtitle">Ознакомьтесь с примерами выполненных мною работ</strong>
 
       <div class="portfolio__list">
-        <div class="item item--hishnik">
+        <div class="item item--hishnik" data-aos="fade-up">
           <div class="item__container">
             <div class="item__img">
               <img src="images/hsc-big.png" alt="">
@@ -229,7 +224,7 @@
           </div>
         </div>
 
-        <div class="item item--evacuator">
+        <div class="item item--evacuator" data-aos="fade-up">
           <div class="item__container">
 
             <div class="item__content">
@@ -239,7 +234,8 @@
               </div>
               <h2 class="item__title">Эвакуатор в Ельце</h2>
               <div class="item_block-hide">
-                <p class="item__text">Круглосуточная эвакуация грузовых и легковых автомобилей в Ельце и Липецкой области</p>
+                <p class="item__text">Круглосуточная эвакуация грузовых и легковых автомобилей в Ельце и Липецкой
+                  области</p>
                 <span class="item__btn js-watch-item">смотреть проект</span>
               </div>
             </div>
@@ -247,7 +243,7 @@
           </div>
         </div>
 
-        <div class="item item--alexandrova">
+        <div class="item item--alexandrova" data-aos="fade-up">
           <div class="item__container">
             <div class="item__img"></div>
 
@@ -270,172 +266,155 @@
 
       </div>
 
-      <a href="" class="btn portfolio__all-btn">СМОТРЕТЬ ВСЕ РАБОТЫ</a>
+      <div class="btn portfolio__all-btn js-work-more">Показать еще</div>
     </div>
   </section>
 
-  <section class="section reviews" id="reviews">
+  <section class="section reviews" data-aos="fade-up" id="reviews">
     <div class="wrapper">
       <h2 class="section__title">Отзывы</h2>
-      <strong class="section__subtitle">Лучше всего о моем профессионализме и ответственности могут рассказать мои заказчики:</strong>
+      <strong class="section__subtitle">Лучше всего о моем профессионализме и ответственности могут рассказать мои
+        заказчики:</strong>
 
       <div class="reviews__photos">
         <div class="review__photo active" data-photo="6" data-review="1">
-          <img src="images/review1.png" alt="">
+          <img src="images/review1.jpg" alt="">
         </div>
         <div class="review__photo" data-photo="2" data-review="2">
-          <img src="images/review2.png" alt="">
+          <span>A</span>
         </div>
         <div class="review__photo" data-photo="3" data-review="3">
-          <img src="images/review3.png" alt="">
+          <img src="images/review3.jpg" alt="">
         </div>
-        <div class="review__photo" data-photo="4" data-review="4">
-          <img src="images/review4.png" alt="">
+        <div class="review__photo" data-photo="5" data-review="4">
+          <img src="images/review4.jpg" alt="">
         </div>
-        <div class="review__photo" data-photo="5" data-review="5">
-          <img src="images/review5.png" alt="">
+        <div class="review__photo" data-photo="7" data-review="5">
+          <span>I</span>
         </div>
-        <div class="review__photo" data-photo="7" data-review="6">
-          <img src="images/review6.png" alt="">
+        <div class="review__photo" data-photo="4" data-review="6">
+          <img src="images/review6.jpg" alt="">
         </div>
         <div class="review__photo" data-photo="8" data-review="7">
-          <img src="images/review7.png" alt="">
+          <img src="images/review7.jpg" alt="">
         </div>
 
         <div class="review__photo" data-photo="1" data-review="8">
-          <img src="images/review8.png" alt="">
+          <img src="images/review8.jpg" alt="">
         </div>
       </div>
 
       <div class="reviews__slider js-reviews-slider">
         <div class="review">
           <div class="review__container">
-            <strong class="review__author">1 Иван Иванов</strong>
-            <span class="review__span">CEO компании Google</span>
+            <strong class="review__author">Ольга</strong>
+            <span class="review__span">Менеджер проектов</span>
             <div class="review__text">
-              Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet. Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet.
+              Обращалась уже повторно. Первый раз верстали сайт, второй раз вносили множество мелких изменений. Очень
+              комфортно сотрудничать. Быстро отвечает на вопросы, вносит правки, подсказывает. Работа выполнена
+              оперативно, качественно. Спасибо за сотрудничество. Рекомендую!
             </div>
           </div>
         </div>
 
         <div class="review">
           <div class="review__container">
-            <strong class="review__author">2 Иван Иванов</strong>
-            <span class="review__span">CEO компании Google</span>
+            <strong class="review__author">Александр</strong>
+            <span class="review__span"></span>
             <div class="review__text">
-              Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet. Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet.
+              Нужно было по макету в Figma сверстать квиз лендинг. Дмитрий отлично справился с работой. Большой
+              профессионал своего дела. Быстро и качественно выполнил работу. Буду обращаться еще обязательно и
+              рекомендовать коллегам.
             </div>
           </div>
         </div>
 
         <div class="review">
           <div class="review__container">
-            <strong class="review__author">3 Иван Иванов</strong>
-            <span class="review__span">CEO компании Google</span>
+            <a href="https://artpromo.site/" target="_blank" class="review__author">Арт Промо</a>
+            <span class="review__span">Студия создания и SEO-продвижения сайтов</span>
             <div class="review__text">
-              Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet. Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet.
+              Нужно было сверстать многостраничный сайт услуг по макетам с нуля и интегрировать его с WordPress. Работа
+              выполнена превосходно! Все супер мега четко и быстро! Чуть ли не впервые за 4 года сталкиваюсь с таким
+              четким, адекватным, вежливым и компетентным специалистом! Я в восторге! Дмитрий - ТОПовый фуллстек
+              программист за весь мой опыт работы! )
+
+              Даже не хочется такой отзыв писать, чтобы только с нами работал))
             </div>
           </div>
         </div>
 
         <div class="review">
           <div class="review__container">
-            <strong class="review__author">4 Иван Иванов</strong>
-            <span class="review__span">CEO компании Google</span>
+            <strong class="review__author">Денис Лобода</strong>
+            <span class="review__span">Интернет-Маркетолог</span>
             <div class="review__text">
-              Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet. Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet.
+              Очень надежный специалист! Верстает четко по макету. Сроки устанавливает и четко укладывается в них! А это
+              очень важно. Адекватно реагирует на правки. Рекомендую!
             </div>
           </div>
         </div>
 
         <div class="review">
           <div class="review__container">
-            <strong class="review__author">5 Иван Иванов</strong>
-            <span class="review__span">CEO компании Google</span>
+            <strong class="review__author">In-scale </strong>
+            <span class="review__span"></span>
             <div class="review__text">
-              Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet. Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet.
+              Понравилось сотрудничество. Отвечает на вопросы быстро, если требуется совет, то помогает. Верстает
+              лендинги чисто, что очень радует. За счет этого экономится много времени на обратную связь. Рекомендую
+              исполнителя.
             </div>
           </div>
         </div>
 
         <div class="review">
           <div class="review__container">
-            <strong class="review__author">6 Иван Иванов</strong>
-            <span class="review__span">CEO компании Google</span>
+            <strong class="review__author">Алексей</strong>
+            <span class="review__span">Вебмастер</span>
             <div class="review__text">
-              Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet. Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet.
+              Профессионально и оперативно была выполнена работа в полном объеме, все правки учтены. могу смело
+              рекомендовать как ответственного и приятного в общении исполнителя! ) все супер!
             </div>
           </div>
         </div>
 
         <div class="review">
           <div class="review__container">
-            <strong class="review__author">7 Иван Иванов</strong>
-            <span class="review__span">CEO компании Google</span>
+            <strong class="review__author">Семён</strong>
+            <span class="review__span">CEO</span>
             <div class="review__text">
-              Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet. Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet.
+              Дмитрий хороший специалист, который знает своё дело на 5&nbsp;баллов. Ему смело можно доверять работу и
+              быть уверенном, что вы получите именно то, что хотите.
             </div>
           </div>
         </div>
 
         <div class="review">
           <div class="review__container">
-            <strong class="review__author">8 Иван Иванов</strong>
-            <span class="review__span">CEO компании Google</span>
+            <strong class="review__author">Александр</strong>
+            <span class="review__span">Предприниматель</span>
             <div class="review__text">
-              Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet. Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet.
+              Честно, я в восторге! Отличнейший исполнитель! Не нужно расписывать ничиге лишнего, понял меня с
+              полуслова!
+
+              Заказывал вёрстку макетов и натяжку их на wordpress. Остался очень доволен, спасибо большое!
+
+              Будем сотрудничать и впредь! !!
             </div>
           </div>
         </div>
       </div>
 
       <div class="reviews__footer">
-        <strong class="reviews__footer_title">Уже работали со мной? Оставьте свой отзыв!</strong>
-        <span class="reviews__footer_subtitle">Расскажите другим о нашей работе и Ваших впечатлениях</span>
-        <span class="btn reviews__footer_btn js-getreview">ОСТАВИТЬ ОТЗЫВ</span>
-
-        <div class="popup2" id="popupReview">
-          <div class="popup2-bg js-popup-close"></div>
-          <div class="popup2-content">
-            <div class="popup2-close js-popup-close"></div>
-            <form class="popup2-block">
-              <strong class="popup2-title">Оставьте свой отзыв!</strong>
-              <span class="popup2-subtitle">Расскажите другим о нашей работе <br>
-                и Ваших впечатлениях</span>
-              <label class="label">
-                <input type="text" class="input" required>
-                <span>Представьтесь, пожалуйста<span class="red">&nbsp;*</span></span>
-              </label>
-              <label class="label">
-                <input type="text" class="input" placeholder="Телефон, e-mail или skype" required>
-                <span>Как с Вами связаться?<span class="red">&nbsp;*</span></span>
-              </label>
-              <label class="label">
-                <textarea class="textarea input" required></textarea>
-                <span>Текст отзыва<span class="red">&nbsp;*</span></span>
-              </label>
-              <label class="file">
-                <input type="file" name="File">
-                <span class="file-custom"></span>
-                <span class="file-text">Прикрепите фото (по желанию)</span>
-              </label>
-              <input type="hidden" class="fileInputNames" name="Files">
-              <label class="check">
-                <input type="checkbox" checked>
-                <span class="check-custom"></span>
-                <span class="check-text">Я согласен на <a href="" target="_blank">обработку персональных данных</a></span>
-              </label>
-              <button type="submit" class="btn submit">Отправить</button>
-              
-            </form>
-          </div>
-        </div>
+        <strong class="reviews__footer_title">Еще больше отзывов о моей работе можете прочитать на сайте <a
+            href="https://kwork.ru/user/coderdi" target="_blank" class="reviews-kwork"><img src="images/kwork-full.svg"
+              alt=""></a></strong>
       </div>
 
     </div>
   </section>
 
-  <section class="section blog" id="blog">
+  <!-- <section class="section blog" id="blog">
     <div class="wrapper">
       <h2 class="section__title">Блог</h2>
       <strong class="section__subtitle">Мои заметки, статьи, мысли по работе и не только...</strong>
@@ -447,7 +426,8 @@
             <div class="blog__item_content">
               <span class="blog__item_date">10 сен. 2020</span>
               <a href="" class="blog__item_title">Заголовок статьи №1</a>
-              <p class="blog__item_text">Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet.</p>
+              <p class="blog__item_text">Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit
+                officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet.</p>
             </div>
           </div>
         </div>
@@ -493,68 +473,23 @@
         </div>
       </div>
     </div>
-  </section>
+  </section> -->
 
   <section class="contacts" id="contacts">
     <div class="wrapper">
       <h2 class="section__title">У вас есть проект?</h2>
       <strong class="section__subtitle">Давайте обсудим его и сделаем!</strong>
-      <div class="contacts__flex">
-        <div class="contacts__left">
-          <strong class="contacts__title">Контакты</strong>
-          <div class="contacts__block">
-            <strong>E-mail:</strong>
-            <a href="mailto:dmitrybuldakov@yandex.ru" class="contacts__link">dmitrybuldakov@yandex.ru</a>
-          </div>
-
-          <div class="banner__socials flex">
-            <a href="" class="banner__socials_item banner__socials_item--telegram"></a>
-            <a href="" class="banner__socials_item banner__socials_item--skype"></a>
-            <a href="" class="banner__socials_item banner__socials_item--github"></a>
-          </div>
-        </div>
-
-        <div class="contacts__right">
-          <form class="form">
-            <label class="label">
-              <input type="text" class="input" required>
-              <span>Представьтесь, пожалуйста<span class="red">&nbsp;*</span></span>
-            </label>
-            <label class="label">
-              <input type="text" class="input" placeholder="Телефон, e-mail или skype" required>
-              <span>Как с Вами связаться?<span class="red">&nbsp;*</span></span>
-            </label>
-            <label class="label">
-              <textarea class="textarea input" required></textarea>
-              <span>Расскажите немного о вашем проекте:<span class="red">&nbsp;*</span></span>
-            </label>
-            <label class="file">
-              <input type="file" name="File">
-              <span class="file-custom"></span>
-              <span class="file-text">Прикрепите файлы</span>
-            </label>
-            <input type="hidden" class="fileInputNames" name="Files">
-            <label class="check">
-              <input type="checkbox" checked>
-              <span class="check-custom"></span>
-              <span class="check-text">Я согласен на <a href="" target="_blank">обработку персональных данных</a></span>
-            </label>
-            <button type="submit" class="btn submit">Отправить</button>
-          </form>
-        </div>
+      <div class="footer__socials flex">
+        <a href="https://t.me/coderdi" target="_blank" class="footer__socials_item banner__socials_item--telegram"></a>
+        <a href="https://kwork.ru/user/coderdi" target="_blank"
+          class="footer__socials_item banner__socials_item--kwork"></a>
+        <a href="mailto:dmitrybuldakov@yandex.ru" target="_blank"
+          class="footer__socials_item banner__socials_item--email"></a>
+        <a href="https://github.com/CoderDi" target="_blank"
+          class="footer__socials_item banner__socials_item--github"></a>
       </div>
     </div>
   </section>
-
-  <footer class="footer">
-    <div class="wrapper">
-      <div class="footer__wrapper">
-        <span class="copyright">@2020, CoderDi - Дмитрий Булдаков</span>
-      </div>
-    </div>
-  </footer>
-  
-
 
   <div class="popup">
     <header class="popup__header">
@@ -568,7 +503,7 @@
 
     <section class="popup__container">
       <div class="popup__content">
-
+        <div class="popup-browser"><img src="images/brouse2.png" alt=""></div>
       </div>
 
       <footer class="popup__footer">
@@ -579,13 +514,13 @@
           </div>
         </div>
       </footer>
-    </section> 
+    </section>
   </div>
 
-
-
   <script src="libs/jquery/jquery-3.3.1.min.js"></script>
-  <script src="libs/slick/slick.min.js"></script>  
-  <script src="js/main.js"></script>  
+  <script src="libs/slick/slick.min.js"></script>
+  <script src="libs/aos/aos.js"></script>
+  <script src="js/main.js"></script>
 </body>
+
 </html>

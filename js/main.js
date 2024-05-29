@@ -23,85 +23,6 @@ $("form").submit(function() { //Change
   return false;
 });
 
-var files; // переменная. будет содержать данные файлов
-
-  // заполняем переменную данными, при изменении значения поля file 
-$('input[type=file]').on('change', function(element){
-    if (element.target.value) {
-      $(this).addClass('loaded')
-    } else {
-      $(this).removeClass('loaded');
-    }
-
-    $(this).nextAll(".file-text").html(this.files[0].name);
-    
-    var then = this;
-    files = this.files;
-    
-    if ((this.files[0].size > (100 * 1024 * 1024))) {
-      alert("Файл слишком большой! Максимальный размер файла должен быть 20Мб.");
-      this.value = "";
-      $(this).removeClass('loaded');
-      return;
-    };
-
-    // ничего не делаем если files пустой
-    if( typeof files == 'undefined' ) {
-      console.log(0);
-      return;
-    }
-
-    // создадим объект данных формы
-    var data = new FormData();
-
-    // заполняем объект данных файлами в подходящем для отправки формате
-    $.each( files, function( key, value ){
-      data.append( key, value );
-    });
-
-    // добавим переменную для идентификации запроса
-    data.append( 'my_file_upload', 1 );
-
-    // AJAX запрос
-    $.ajax({
-      url         : './submit.php',
-      type        : 'POST', // важно!
-      data        : data,
-      cache       : false,
-      dataType    : 'json',
-      // отключаем обработку передаваемых данных, пусть передаются как есть
-      processData : false,
-      // отключаем установку заголовка типа запроса. Так jQuery скажет серверу что это строковой запрос
-      contentType : false, 
-      // функция успешного ответа сервера
-      success     : function( respond, status, jqXHR ){
-
-		
-        if( typeof respond.error === 'undefined' ){
-          // выведем пути загруженных файлов в блок '.ajax-reply'
-          var files_path = respond.files;
-          var html = '';
-          $.each( files_path, function( key, val ){
-            html += val + "<br>";
-          } )
-
-          // $('.ajax-reply').html( html );
-          $(then).parents("form").find(".fileInputNames").val(html);
-        }
-        // ошибка
-        else {
-          console.log('ОШИБКА: ' + respond.error );
-        }
-      },
-      // функция ошибки ответа сервера
-      error: function( jqXHR, status, errorThrown ){
-        console.log( 'ОШИБКА AJAX запроса: ' + status, jqXHR );
-      }
-
-    });
-  });
-  
-
 $(document).ready(function () {
   $(".js-watch-item").click(function(){
     $("html").addClass("no-scroll");
@@ -120,11 +41,6 @@ $(document).ready(function () {
   });
   $(".js-popup-close").on("click", function(){
     $(".popup2").removeClass("active");
-  });
-
-
-  $(".service").hover(function(){
-    $(this).find(".service__text").slideToggle(200)
   });
 
   $('.js-reviews-slider').slick({
@@ -155,6 +71,11 @@ $(document).ready(function () {
     $("[type=tel]").mask("+7 (999) 999-99-99");
   });
 
+
+  AOS.init({
+    offset: 140,
+    duration: 600
+  });
 
 
 });
