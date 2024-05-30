@@ -355,6 +355,11 @@
 			<path d="M0.0703125 12L11.0977 23.0273L12.1523 21.9727L2.92969 12.75H24V11.25H2.92969L12.1523 2.02734L11.0977 0.972656L0.0703125 12Z" fill="black"/>
 		</g>
 	</svg>
+  <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+		<g id="arrow-white" class="img">
+			<path d="M0.0703125 12L11.0977 23.0273L12.1523 21.9727L2.92969 12.75H24V11.25H2.92969L12.1523 2.02734L11.0977 0.972656L0.0703125 12Z" fill="#fff"/>
+		</g>
+	</svg>
 
 	<svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
 		<g id="arrow-hover" class="img">

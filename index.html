@@ -19,6 +19,7 @@
         <a href="#top" class="header-logo">
           <span>CoderDi<span>
               <img src="images/icons.svg#logo-blue" alt="">
+              <img src="images/icons.svg#logo" alt="">
         </a>
         <div class="banner__socials flex">
           <a href="https://t.me/coderdi" target="_blank"
@@ -32,11 +33,29 @@
         </div>
 
         <div class="day-night">
-          <input type="checkbox" id="toggle" class="toggle--checkbox">
-          <label for="toggle" class="toggle--label">
-            <span class="toggle--label-background"></span>
+          <input class="day-night-switch" type="checkbox" checked id="day-night" />
+          <label class="day-night-switch" for="day-night">
+            <div class="celestial sun"></div>
+            <div class="celestial moon">
+              <div class="craters">
+                <div class="crater"></div>
+                <div class="crater"></div>
+                <div class="crater"></div>
+                <div class="crater"></div>
+                <div class="crater"></div>
+              </div>
+            </div>
+            <div class="decorations">
+              <div class="decoration"></div>
+              <div class="decoration"></div>
+              <div class="decoration"></div>
+              <div class="decoration"></div>
+            </div>
+            <div class="mountains">
+              <div></div>
+              <div></div>
+            </div>
           </label>
-          <div class="background"></div>
         </div>
       </div>
     </div>
@@ -55,26 +74,6 @@
 
           <img src="images/banner-img.png" alt="" class="banner__content_img" data-aos="fade-left">
         </div>
-
-        <!-- <footer class="banner__footer">
-          <div class="banner__footer_item">
-            <strong>>4</strong>
-            <span>лет <br>
-              опыта</span>
-          </div>
-
-          <div class="banner__footer_item">
-            <strong>>200</strong>
-            <span>успешных <br>
-              проектов*</span>
-          </div>
-
-          <div class="banner__footer_item">
-            <strong>>100</strong>
-            <span>довольных <br>
-              заказчиков</span>
-          </div>
-        </footer> -->
       </div>
     </div>
   </section>
@@ -133,35 +132,21 @@
       <strong class="section__subtitle">Выполняю следующие работы</strong>
 
       <div class="services__list">
-        <div class="service">
+        <div class="service" data-aos="fade-up">
           <div class="service-container">
             <div class="service__header">
               <strong class="service__title">Вёрстка</strong>
               <img src="images/icons.svg#service1" alt="" class="service__img">
             </div>
             <div class="service__text">
-              Верстка HTML-сайта (лендинги, многостраничные сайты интернет-магазины) из макета Photoshop, Figma, Adobe
-              XD. <br>
+              Верстка сайта любой сложности из макета Figma. <br>
               Валидно, кроссбраузерно, адаптивно. <br>
               Полная работоспособность в HTML Вашего макета.
             </div>
           </div>
         </div>
 
-        <div class="service">
-          <div class="service-container">
-            <div class="service__header">
-              <strong class="service__title">Дизайн</strong>
-              <img src="images/icons.svg#service2" alt="" class="service__img">
-            </div>
-            <div class="service__text">
-              Разработка дизайна по Вашему прототипу и ТЗ либо “сделай как у конкурентов, только лучше”.
-              Конечным продуктом, являются макеты Figma, готовые для верстки шаблона.
-            </div>
-          </div>
-        </div>
-
-        <div class="service">
+        <div class="service" data-aos="fade-up">
           <div class="service-container">
             <div class="service__header">
               <strong class="service__title">Сайт
@@ -169,13 +154,25 @@
               <img src="images/icons.svg#service3" alt="" class="service__img">
             </div>
             <div class="service__text">
-              Создание сайта на Wordpress как по вашему дизайну и верстке, так и с нуля под ключ. <br>
-              Наполнение сайта конентом - текстовой, графической информацией.
+              Создание сайта на Wordpress любой сложности как по вашему дизайну и верстке, так и с нуля под ключ.
             </div>
           </div>
         </div>
 
-        <div class="service">
+        <div class="service" data-aos="fade-up">
+          <div class="service-container">
+            <div class="service__header">
+              <strong class="service__title">Дизайн</strong>
+              <img src="images/icons.svg#service2" alt="" class="service__img">
+            </div>
+            <div class="service__text">
+              Разработка дизайна по Вашему прототипу и ТЗ <br> либо “сделай как у конкурентов, только лучше”. <br>
+              Конечным продуктом, являются макеты Figma, готовые для верстки шаблона.
+            </div>
+          </div>
+        </div>
+
+        <div class="service" data-aos="fade-up">
           <div class="service-container">
             <div class="service__header">
               <strong class="service__title">Скрипты
@@ -183,14 +180,13 @@
               <img src="images/icons.svg#service4" alt="" class="service__img">
             </div>
             <div class="service__text">
-              1. Установка, доработка дополнительного функционала: калькулятор, фотогалерея, слайдер, карта сайта, формы
+              Установка, доработка дополнительного функционала: <br> квиз, калькулятор, фотогалерея, слайдер, карта
+              сайта, формы
               для связи и т.д. <br>
-              2. Оптимизация сайта: скорость загрузки, оптимизация сайта для лучшей индексации поисковыми системами:
-              HTML и CSS валидация, корректировка кода и пр. <br>
-              3. Наполнение сайта Вашим контентом: товарами интернет-магазина, текстовой информацией, графической
-              информации. <br>
-              4. Регистрация домена, хостинга, установка Вашего сайта на хостинг. <br>
-              5. Администрирование и сопровождение Вашего сайта.
+              Оптимизация сайта. <br>
+              Наполнение сайта Вашим контентом. <br>
+              Регистрация домена, хостинга, установка Вашего сайта на хостинг. <br>
+              Администрирование и сопровождение Вашего сайта.
             </div>
           </div>
         </div>
@@ -219,6 +215,14 @@
               <div class="item_block-hide">
                 <p class="item__text">Официальный сайт обучающего приложения для подготовки к ЕГЭ и ОГЭ по химии</p>
                 <span class="item__btn js-watch-item">смотреть проект</span>
+                <div class="item-popup js-item-popup">
+                  <h3 class="popup__header_title js-popup-title">ХиШник</h3>
+                  <a href="https://yolastudio.ru" target="_blank"
+                    class="popup__header_link js-popup-link">https://yolastudio.ru</a>
+                  <div class="js-popup-text">
+                    Верстка и посадка на Wordpress сайта для стоматологии Анже. <br>
+                    Работа была выполнена в сотрудничестве со студией Лайтекс</div>
+                </div>
               </div>
             </div>
           </div>
@@ -237,6 +241,14 @@
                 <p class="item__text">Круглосуточная эвакуация грузовых и легковых автомобилей в Ельце и Липецкой
                   области</p>
                 <span class="item__btn js-watch-item">смотреть проект</span>
+                <div class="item-popup js-item-popup">
+                  <h3 class="popup__header_title js-popup-title">Эвакуатор в Ельце</h3>
+                  <a href="https://yolastudio.ru" target="_blank"
+                    class="popup__header_link js-popup-link">https://yolastudio.ru</a>
+                  <div class="js-popup-text">
+                    Верстка и посадка на Wordpress сайта для стоматологии Анже. <br>
+                    Работа была выполнена в сотрудничестве со студией Лайтекс</div>
+                </div>
               </div>
             </div>
             <div class="item__img"></div>
@@ -258,6 +270,14 @@
                 <p class="item__text">Персональный сайт учителя математики
                   Александровой Зои Алексеевны</p>
                 <span class="item__btn js-watch-item">смотреть проект</span>
+                <div class="item-popup js-item-popup">
+                  <h3 class="popup__header_title js-popup-title">Сайт учителя математики</h3>
+                  <a href="https://yolastudio.ru" target="_blank"
+                    class="popup__header_link js-popup-link">https://yolastudio.ru</a>
+                  <div class="js-popup-text">
+                    Верстка и посадка на Wordpress сайта для стоматологии Анже. <br>
+                    Работа была выполнена в сотрудничестве со студией Лайтекс</div>
+                </div>
               </div>
             </div>
           </div>
@@ -495,26 +515,24 @@
     <header class="popup__header">
       <div class="wrapper">
         <div class="popup__header_wrapper flex">
-          <h3 class="popup__header_title js-popup-title"></h3>
+          <div class="popup__header_text js-popup-work">
+
+          </div>
           <span class="close js-close"></span>
         </div>
       </div>
     </header>
 
-    <section class="popup__container">
-      <div class="popup__content">
-        <div class="popup-browser"><img src="images/brouse2.png" alt=""></div>
-      </div>
+    <iframe class="popup-browser" src="https://yolastudio.ru" frameborder="0"></iframe>
 
-      <footer class="popup__footer">
-        <div class="wrapper">
-          <div class="popup__navi">
-            <span class="popup__navi_prev"></span>
-            <span class="popup__navi_next"></span>
-          </div>
+    <footer class="popup__footer">
+      <div class="wrapper">
+        <div class="popup__navi">
+          <span class="popup__navi_prev"></span>
+          <span class="popup__navi_next"></span>
         </div>
-      </footer>
-    </section>
+      </div>
+    </footer>
   </div>
 
   <script src="libs/jquery/jquery-3.3.1.min.js"></script>

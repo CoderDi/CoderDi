@@ -25,9 +25,8 @@ $("form").submit(function() { //Change
 
 $(document).ready(function () {
   $(".js-watch-item").click(function(){
-    $("html").addClass("no-scroll");
-    $("#header").addClass("no-scroll");
-    $(".js-popup-title").text($(this).parents(".item").find(".item__title").text());
+    $("html, #header").addClass("no-scroll");
+    $(".js-popup-work").html($(this).parents(".item").find(".js-item-popup").html());
     $(".popup").addClass("active");
   });
   $(".js-close").click(function(){
@@ -77,5 +76,17 @@ $(document).ready(function () {
     duration: 600
   });
 
+  const checkbox = document.querySelector("#day-night");
+  const body = document.querySelector("body");
+  const nightClass = 'night';
+
+  checkbox.addEventListener('change', (e) => {
+    const { checked } = e.target;
+    if (checked) {
+      body.classList.remove(nightClass);
+    } else {
+      body.classList.add(nightClass);
+    }
+  });
 
 });

@@ -4,6 +4,28 @@
   box-sizing: border-box
   outline: none
   text-decoration: none
+
+body
+  --text-color: #131340
+  --background-plash: #fff
+  --text-blue: #577bf9
+  --bg-service: rgba(87, 123, 249, 1)
+  background: #fff
+  &.night
+    background: #111
+    --text-color: #fff
+    --background-plash: #D25419
+    --text-blue: #fff
+    --bg-service: rgba(87, 123, 249, .3)
+    .banner__content_img
+      opacity: 0.85 !important
+    .reviews__slider .slick-arrow
+      background-image: url(../images/icons.svg#arrow-white)
+      &:hover
+        background-image: url(../images/icons.svg#arrow-hover)
+    .header-logo:hover img:nth-child(2)
+      opacity: 1
+
 .no-scroll
   overflow: hidden
   padding-right: 17px
@@ -40,7 +62,7 @@
     &.white::before
       background: #fff
   &__subtitle
-    color: #131340
+    color: var(--text-color)
     font-size: 18px
     line-height: 1.4
     display: block

@@ -6,8 +6,8 @@
   width: 100%
   padding: 15px 0
   &-container
-    background: #fff
-    padding: 20px
+    background: var(--background-plash)
+    padding: 15px 20px
     border-radius: 10px
     box-shadow: 0 0 10px 1px rgba(87, 123, 249, .2)
     position: relative
@@ -20,7 +20,7 @@
       font-weight: 700
       font-size: 20px
       line-height: 24px
-      color: #577bf9
+      color: var(--text-blue)
       letter-spacing: 0
       transition: .3s
     img
@@ -36,9 +36,236 @@
       span
         letter-spacing: -10px
         color: transparent
-      img
+      img:nth-child(1)
         opacity: 1
       
+
+.day-night
+  position: relative
+
+:root
+  --bg-color: #2b2b2b
+  --fg-color: rgba(255, 255, 255, 0.9)
+
+body.day
+  --bg-color: #c4e4ff
+  --fg-color: rgba(0, 0, 0, 0.7)
+
+label.day-night-switch
+  display: block
+  --size: 48px
+  --height: calc(var(--size) / 2)
+  --padding: calc(var(--size) * 0.04)
+  --border-width: calc(var(--size) * 0.02)
+  --transition-duration: 250ms
+  --switch-size: calc(var(--height) - 2 * var(--padding) - 2 * var(--border-width))
+  --pos-left: var(--padding)
+  --pos-right: calc(var(--size) - var(--switch-size) - var(--padding) - 2 * var(--border-width))
+  --shift: calc(var(--height) * 1.25)
+
+  width: var(--size)
+  height: var(--height)
+  border-radius: var(--height)
+  border: var(--border-width) solid white
+  position: relative
+  transition: all var(--transition-duration) ease-in-out
+  cursor: pointer
+  overflow: hidden
+
+  > .celestial
+    transition: all var(--transition-duration) ease-in-out
+    width: var(--switch-size)
+    height: var(--switch-size)
+    border: var(--border-width) solid green
+    display: inline-block
+    position: absolute
+    border-radius: var(--height)
+
+    &.sun
+      background-color: #fdc82e
+      border-color: #e3ad0d
+
+    &.moon
+      background-color: #d2cec4
+      border-color: #a9a18f
+
+      > .craters
+        > .crater
+          background-color: #d2cec4
+          border-color: #a9a18f
+          border-width: calc(max(var(--border-width) * 0.65, 1px))
+          border-style: solid
+          position: absolute
+          border-radius: 50%
+
+          &:nth-child(1)
+            width: calc(var(--switch-size) * 0.15)
+            height: calc(var(--switch-size) * 0.15)
+            top: calc(var(--switch-size) * 0.7)
+            left: calc(var(--switch-size) * 0.4)
+
+          &:nth-child(2)
+            width: calc(var(--switch-size) * 0.3)
+            height: calc(var(--switch-size) * 0.3)
+            top: calc(var(--switch-size) * 0.1)
+            left: calc(var(--switch-size) * -0.05)
+
+          &:nth-child(3)
+            width: calc(var(--switch-size) * 0.1)
+            height: calc(var(--switch-size) * 0.1)
+            top: calc(var(--switch-size) * 0.2)
+            left: calc(var(--switch-size) * 0.6)
+
+          &:nth-child(4)
+            width: calc(var(--switch-size) * 0.1)
+            height: calc(var(--switch-size) * 0.1)
+            top: calc(var(--switch-size) * 0.3)
+            left: calc(var(--switch-size) * 0.25)
+
+          &:nth-child(5)
+            width: calc(var(--switch-size) * 0.2)
+            height: calc(var(--switch-size) * 0.2)
+            top: calc(var(--switch-size) * 0.5)
+            left: calc(var(--switch-size) * 0.8)
+
+  > .decorations
+    > .decoration
+      position: absolute
+      transition: all var(--transition-duration) ease-in-out
+
+  > .mountains
+    position: absolute
+    display: inline-block
+    top: calc(var(--switch-size) * 0.85)
+    left: calc(var(--switch-size) * 0.7)
+
+    > *
+      position: absolute
+      display: inline-block
+      border-width: var(--border-width)
+      border-style: solid
+      transform: rotate(45deg)
+      transition: all var(--transition-duration) ease-in-out
+      border-top-left-radius: calc(var(--switch-size) * 0.1)
+      background-color: white
+      border-color: black
+
+      &:nth-child(1)
+        width: calc(var(--switch-size) * 0.9)
+        height: calc(var(--switch-size) * 0.9)
+        top: calc(var(--switch-size) * 0.1)
+
+      &:nth-child(2)
+        width: calc(var(--switch-size) * 0.45)
+        height: calc(var(--switch-size) * 0.45)
+        top: calc(var(--switch-size) * 0.2)
+        left: calc(var(--switch-size) * 0.6)
+
+input.day-night-switch
+  display: none
+
+  // checked styles
+  &:checked
+    + label.day-night-switch
+      border-color: #3190bf
+      background-color: #6cbde5
+
+      > .celestial
+        &.sun
+          transition-delay: var(--transition-duration)
+          top: var(--padding)
+          left: var(--pos-right)
+          transform: scale(1)
+
+        &.moon
+          transition-delay: 0ms
+          left: var(--pos-left)
+          top: var(--shift)
+          transform: scale(0)
+
+      > .decorations
+        opacity: 0.5
+
+        .decoration
+          background-color: white
+          border-radius: 50%
+
+          &:nth-child(1)
+            border-radius: calc(var(--switch-size) * 0.3)
+            height: calc(var(--switch-size) * 0.3)
+            width: calc(var(--switch-size) * 0.84)
+            top: calc(var(--switch-size) * 0.6)
+            left: calc(var(--switch-size) * 0.45)
+
+          &:nth-child(2)
+            height: calc(var(--switch-size) * 0.35)
+            width: calc(var(--switch-size) * 0.35)
+            top: calc(var(--switch-size) * 0.5)
+            left: calc(var(--switch-size) * 0.35)
+
+          &:nth-child(3)
+            height: calc(var(--switch-size) * 0.3)
+            width: calc(var(--switch-size) * 0.3)
+            top: calc(var(--switch-size) * 0.5)
+            left: calc(var(--switch-size) * 0.85)
+
+          &:nth-child(4)
+            height: calc(var(--switch-size) * 0.4)
+            width: calc(var(--switch-size) * 0.4)
+            top: calc(var(--switch-size) * 0.4)
+            left: calc(var(--switch-size) * 0.55)
+
+      > .mountains
+        > *
+          background-color: #d4d4d4
+          border-color: #a8a8a8
+
+  // unchecked styles
+  + label.day-night-switch
+    border-color: #2a4569
+    background-color: #223349
+
+    > .celestial
+      &.sun
+        transition-delay: 0ms
+        top: var(--shift)
+        left: var(--pos-right)
+        transform: scale(0)
+
+      &.moon
+        transition-delay: var(--transition-duration)
+        top: var(--padding)
+        left: var(--pos-left)
+        overflow: hidden
+        transform: scale(1)
+
+    > .decorations
+      > .decoration
+        background-color: white
+        border-radius: 50%
+        width: calc(max(var(--border-width) * 0.75, 2px))
+        height: calc(max(var(--border-width) * 0.75, 2px))
+
+        &:nth-child(1)
+          top: calc(var(--switch-size) * 0.7)
+          left: calc(var(--switch-size) * 1.7)
+
+        &:nth-child(2)
+          top: calc(var(--switch-size) * 0.4)
+          left: calc(var(--switch-size) * 1.4)
+
+        &:nth-child(3)
+          top: calc(var(--switch-size) * 0.9)
+          left: calc(var(--switch-size) * 2.2)
+
+        &:nth-child(4)
+          top: calc(var(--switch-size) * 0.3)
+          left: calc(var(--switch-size) * 2)
+
+    > .mountains
+      > *
+        background-color: #878787
+        border-color: #5c5c5c
 
 
 

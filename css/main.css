@@ -201,6 +201,33 @@ td, th {
   text-decoration: none;
 }
 
+body {
+  --text-color: #131340;
+  --background-plash: #fff;
+  --text-blue: #577bf9;
+  --bg-service: rgba(87, 123, 249, 1);
+  background: #fff;
+}
+body.night {
+  background: #111;
+  --text-color: #fff;
+  --background-plash: #D25419;
+  --text-blue: #fff;
+  --bg-service: rgba(87, 123, 249, .3);
+}
+body.night .banner__content_img {
+  opacity: 0.85 !important;
+}
+body.night .reviews__slider .slick-arrow {
+  background-image: url(../images/icons.svg#arrow-white);
+}
+body.night .reviews__slider .slick-arrow:hover {
+  background-image: url(../images/icons.svg#arrow-hover);
+}
+body.night .header-logo:hover img:nth-child(2) {
+  opacity: 1;
+}
+
 .no-scroll {
   overflow: hidden;
   padding-right: 17px;
@@ -254,7 +281,7 @@ td, th {
   background: #fff;
 }
 .section__subtitle {
-  color: #131340;
+  color: var(--text-color);
   font-size: 18px;
   line-height: 1.4;
   display: block;
@@ -380,8 +407,8 @@ td, th {
   padding: 15px 0;
 }
 .header-container {
-  background: #fff;
-  padding: 20px;
+  background: var(--background-plash);
+  padding: 15px 20px;
   border-radius: 10px;
   -webkit-box-shadow: 0 0 10px 1px rgba(87, 123, 249, 0.2);
           box-shadow: 0 0 10px 1px rgba(87, 123, 249, 0.2);
@@ -397,7 +424,7 @@ td, th {
   font-weight: 700;
   font-size: 20px;
   line-height: 24px;
-  color: #577bf9;
+  color: var(--text-blue);
   letter-spacing: 0;
   -webkit-transition: 0.3s;
   transition: 0.3s;
@@ -417,8 +444,247 @@ td, th {
   letter-spacing: -10px;
   color: transparent;
 }
-.header-logo:hover img {
+.header-logo:hover img:nth-child(1) {
   opacity: 1;
+}
+
+.day-night {
+  position: relative;
+}
+
+:root {
+  --bg-color: #2b2b2b;
+  --fg-color: rgba(255, 255, 255, 0.9);
+}
+
+body.day {
+  --bg-color: #c4e4ff;
+  --fg-color: rgba(0, 0, 0, 0.7);
+}
+
+label.day-night-switch {
+  display: block;
+  --size: 48px;
+  --height: calc(var(--size) / 2);
+  --padding: calc(var(--size) * 0.04);
+  --border-width: calc(var(--size) * 0.02);
+  --transition-duration: 250ms;
+  --switch-size: calc(var(--height) - 2 * var(--padding) - 2 * var(--border-width));
+  --pos-left: var(--padding);
+  --pos-right: calc(var(--size) - var(--switch-size) - var(--padding) - 2 * var(--border-width));
+  --shift: calc(var(--height) * 1.25);
+  width: var(--size);
+  height: var(--height);
+  border-radius: var(--height);
+  border: var(--border-width) solid white;
+  position: relative;
+  -webkit-transition: all var(--transition-duration) ease-in-out;
+  transition: all var(--transition-duration) ease-in-out;
+  cursor: pointer;
+  overflow: hidden;
+}
+label.day-night-switch > .celestial {
+  -webkit-transition: all var(--transition-duration) ease-in-out;
+  transition: all var(--transition-duration) ease-in-out;
+  width: var(--switch-size);
+  height: var(--switch-size);
+  border: var(--border-width) solid green;
+  display: inline-block;
+  position: absolute;
+  border-radius: var(--height);
+}
+label.day-night-switch > .celestial.sun {
+  background-color: #fdc82e;
+  border-color: #e3ad0d;
+}
+label.day-night-switch > .celestial.moon {
+  background-color: #d2cec4;
+  border-color: #a9a18f;
+}
+label.day-night-switch > .celestial.moon > .craters > .crater {
+  background-color: #d2cec4;
+  border-color: #a9a18f;
+  border-width: max(var(--border-width) * 0.65, 1px);
+  border-style: solid;
+  position: absolute;
+  border-radius: 50%;
+}
+label.day-night-switch > .celestial.moon > .craters > .crater:nth-child(1) {
+  width: calc(var(--switch-size) * 0.15);
+  height: calc(var(--switch-size) * 0.15);
+  top: calc(var(--switch-size) * 0.7);
+  left: calc(var(--switch-size) * 0.4);
+}
+label.day-night-switch > .celestial.moon > .craters > .crater:nth-child(2) {
+  width: calc(var(--switch-size) * 0.3);
+  height: calc(var(--switch-size) * 0.3);
+  top: calc(var(--switch-size) * 0.1);
+  left: calc(var(--switch-size) * -0.05);
+}
+label.day-night-switch > .celestial.moon > .craters > .crater:nth-child(3) {
+  width: calc(var(--switch-size) * 0.1);
+  height: calc(var(--switch-size) * 0.1);
+  top: calc(var(--switch-size) * 0.2);
+  left: calc(var(--switch-size) * 0.6);
+}
+label.day-night-switch > .celestial.moon > .craters > .crater:nth-child(4) {
+  width: calc(var(--switch-size) * 0.1);
+  height: calc(var(--switch-size) * 0.1);
+  top: calc(var(--switch-size) * 0.3);
+  left: calc(var(--switch-size) * 0.25);
+}
+label.day-night-switch > .celestial.moon > .craters > .crater:nth-child(5) {
+  width: calc(var(--switch-size) * 0.2);
+  height: calc(var(--switch-size) * 0.2);
+  top: calc(var(--switch-size) * 0.5);
+  left: calc(var(--switch-size) * 0.8);
+}
+label.day-night-switch > .decorations > .decoration {
+  position: absolute;
+  -webkit-transition: all var(--transition-duration) ease-in-out;
+  transition: all var(--transition-duration) ease-in-out;
+}
+label.day-night-switch > .mountains {
+  position: absolute;
+  display: inline-block;
+  top: calc(var(--switch-size) * 0.85);
+  left: calc(var(--switch-size) * 0.7);
+}
+label.day-night-switch > .mountains > * {
+  position: absolute;
+  display: inline-block;
+  border-width: var(--border-width);
+  border-style: solid;
+  -webkit-transform: rotate(45deg);
+      -ms-transform: rotate(45deg);
+          transform: rotate(45deg);
+  -webkit-transition: all var(--transition-duration) ease-in-out;
+  transition: all var(--transition-duration) ease-in-out;
+  border-top-left-radius: calc(var(--switch-size) * 0.1);
+  background-color: white;
+  border-color: black;
+}
+label.day-night-switch > .mountains > *:nth-child(1) {
+  width: calc(var(--switch-size) * 0.9);
+  height: calc(var(--switch-size) * 0.9);
+  top: calc(var(--switch-size) * 0.1);
+}
+label.day-night-switch > .mountains > *:nth-child(2) {
+  width: calc(var(--switch-size) * 0.45);
+  height: calc(var(--switch-size) * 0.45);
+  top: calc(var(--switch-size) * 0.2);
+  left: calc(var(--switch-size) * 0.6);
+}
+
+input.day-night-switch {
+  display: none;
+}
+input.day-night-switch:checked + label.day-night-switch {
+  border-color: #3190bf;
+  background-color: #6cbde5;
+}
+input.day-night-switch:checked + label.day-night-switch > .celestial.sun {
+  -webkit-transition-delay: var(--transition-duration);
+          transition-delay: var(--transition-duration);
+  top: var(--padding);
+  left: var(--pos-right);
+  -webkit-transform: scale(1);
+      -ms-transform: scale(1);
+          transform: scale(1);
+}
+input.day-night-switch:checked + label.day-night-switch > .celestial.moon {
+  -webkit-transition-delay: 0ms;
+          transition-delay: 0ms;
+  left: var(--pos-left);
+  top: var(--shift);
+  -webkit-transform: scale(0);
+      -ms-transform: scale(0);
+          transform: scale(0);
+}
+input.day-night-switch:checked + label.day-night-switch > .decorations {
+  opacity: 0.5;
+}
+input.day-night-switch:checked + label.day-night-switch > .decorations .decoration {
+  background-color: white;
+  border-radius: 50%;
+}
+input.day-night-switch:checked + label.day-night-switch > .decorations .decoration:nth-child(1) {
+  border-radius: calc(var(--switch-size) * 0.3);
+  height: calc(var(--switch-size) * 0.3);
+  width: calc(var(--switch-size) * 0.84);
+  top: calc(var(--switch-size) * 0.6);
+  left: calc(var(--switch-size) * 0.45);
+}
+input.day-night-switch:checked + label.day-night-switch > .decorations .decoration:nth-child(2) {
+  height: calc(var(--switch-size) * 0.35);
+  width: calc(var(--switch-size) * 0.35);
+  top: calc(var(--switch-size) * 0.5);
+  left: calc(var(--switch-size) * 0.35);
+}
+input.day-night-switch:checked + label.day-night-switch > .decorations .decoration:nth-child(3) {
+  height: calc(var(--switch-size) * 0.3);
+  width: calc(var(--switch-size) * 0.3);
+  top: calc(var(--switch-size) * 0.5);
+  left: calc(var(--switch-size) * 0.85);
+}
+input.day-night-switch:checked + label.day-night-switch > .decorations .decoration:nth-child(4) {
+  height: calc(var(--switch-size) * 0.4);
+  width: calc(var(--switch-size) * 0.4);
+  top: calc(var(--switch-size) * 0.4);
+  left: calc(var(--switch-size) * 0.55);
+}
+input.day-night-switch:checked + label.day-night-switch > .mountains > * {
+  background-color: #d4d4d4;
+  border-color: #a8a8a8;
+}
+input.day-night-switch + label.day-night-switch {
+  border-color: #2a4569;
+  background-color: #223349;
+}
+input.day-night-switch + label.day-night-switch > .celestial.sun {
+  -webkit-transition-delay: 0ms;
+          transition-delay: 0ms;
+  top: var(--shift);
+  left: var(--pos-right);
+  -webkit-transform: scale(0);
+      -ms-transform: scale(0);
+          transform: scale(0);
+}
+input.day-night-switch + label.day-night-switch > .celestial.moon {
+  -webkit-transition-delay: var(--transition-duration);
+          transition-delay: var(--transition-duration);
+  top: var(--padding);
+  left: var(--pos-left);
+  overflow: hidden;
+  -webkit-transform: scale(1);
+      -ms-transform: scale(1);
+          transform: scale(1);
+}
+input.day-night-switch + label.day-night-switch > .decorations > .decoration {
+  background-color: white;
+  border-radius: 50%;
+  width: max(var(--border-width) * 0.75, 2px);
+  height: max(var(--border-width) * 0.75, 2px);
+}
+input.day-night-switch + label.day-night-switch > .decorations > .decoration:nth-child(1) {
+  top: calc(var(--switch-size) * 0.7);
+  left: calc(var(--switch-size) * 1.7);
+}
+input.day-night-switch + label.day-night-switch > .decorations > .decoration:nth-child(2) {
+  top: calc(var(--switch-size) * 0.4);
+  left: calc(var(--switch-size) * 1.4);
+}
+input.day-night-switch + label.day-night-switch > .decorations > .decoration:nth-child(3) {
+  top: calc(var(--switch-size) * 0.9);
+  left: calc(var(--switch-size) * 2.2);
+}
+input.day-night-switch + label.day-night-switch > .decorations > .decoration:nth-child(4) {
+  top: calc(var(--switch-size) * 0.3);
+  left: calc(var(--switch-size) * 2);
+}
+input.day-night-switch + label.day-night-switch > .mountains > * {
+  background-color: #878787;
+  border-color: #5c5c5c;
 }
 
 .banner__wrapper {
@@ -508,19 +774,19 @@ td, th {
 }
 .banner__socials_item {
   display: block;
-  width: 24px;
-  height: 24px;
+  width: 32px;
+  height: 32px;
   margin-right: 25px;
   background-repeat: no-repeat;
   background-size: 24px 24px;
   background-position: center;
-  -webkit-transition: 0.1s;
-  transition: 0.1s;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
 }
 .banner__socials_item:hover {
-  -webkit-transform: scale(1.1);
-      -ms-transform: scale(1.1);
-          transform: scale(1.1);
+  -webkit-transform: translate(0, -3px);
+      -ms-transform: translate(0, -3px);
+          transform: translate(0, -3px);
 }
 .banner__socials_item--telegram {
   background-image: url(../images/icons.svg#telegram);
@@ -618,23 +884,39 @@ td, th {
 
 .service {
   padding: 0 10px;
-  width: 25%;
   position: relative;
   z-index: 10;
+  margin-bottom: 20px;
 }
 .service-container {
-  background: #577BF9;
+  cursor: default;
+  background: var(--bg-service);
   -webkit-box-shadow: 0px 4px 6px rgba(87, 123, 249, 0.25);
           box-shadow: 0px 4px 6px rgba(87, 123, 249, 0.25);
-  border-radius: 5px;
-  height: 100%;
+  border-radius: 16px;
+  min-height: 200px;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+  position: relative;
+}
+.service:hover .service-container {
+  -webkit-transform: scale(0.95);
+      -ms-transform: scale(0.95);
+          transform: scale(0.95);
+  -webkit-box-shadow: 0 0 80px -10px transparent;
+          box-shadow: 0 0 80px -10px transparent;
+  -webkit-animation: background 10s infinite alternate;
+          animation: background 10s infinite alternate;
 }
 .service__text {
   padding: 0 25px 25px;
   font-weight: normal;
-  font-size: 14px;
-  line-height: 16px;
+  font-size: 18px;
+  text-align: center;
+  line-height: 1.3;
   color: #FFFFFF;
+  max-width: 860px;
+  margin: 0 auto;
 }
 .service__header {
   display: -webkit-box;
@@ -644,268 +926,87 @@ td, th {
       -ms-flex-align: center;
           align-items: center;
   padding: 25px;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 .service__title {
   font-weight: 400;
-  font-size: 18px;
-  line-height: 23px;
+  font-size: 50px;
+  line-height: 1.3;
   color: #FFFFFF;
 }
 .service__img {
+  position: absolute;
+  top: calc(50% - 60px);
+  right: 30px;
   -ms-flex-negative: 0;
       flex-shrink: 0;
   display: block;
-  width: 80px;
-  height: 80px;
+  width: 120px;
+  height: 120px;
   margin-left: 20px;
 }
-.services__list {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  margin: 0 -10px;
-}
 
-.day-night {
-  position: relative;
-}
-
-:root {
-  /** sunny side **/
-  --blue-background: #C2E9F6;
-  --blue-border: #72cce3;
-  --blue-color: #96dcee;
-  --yellow-background: #fffaa8;
-  --yellow-border: #f5eb71;
-  /** dark side **/
-  --indigo-background: #808fc7;
-  --indigo-border: #5d6baa;
-  --indigo-color: #6b7abb;
-  --gray-border: #e8e8ea;
-  --gray-dots: #e8e8ea;
-  /** general **/
-  --white: #fff;
-}
-
-.background {
-  position: absolute;
-  left: 0;
-  top: 0;
-  background: var(--blue-background);
-  z-index: -1;
-  width: 100%;
-  height: 100%;
-  -webkit-transition: all 250ms ease-in;
-  transition: all 250ms ease-in;
-}
-
-.toggle--checkbox {
-  display: none;
-}
-
-.toggle--checkbox:checked {
-  /** This will all flip from sun to moon **/
-  /** Change the label color **/
-}
-
-.toggle--checkbox:checked ~ .background {
-  background: var(--indigo-background);
-}
-
-.toggle--checkbox:checked + .toggle--label {
-  background: var(--indigo-color);
-  border-color: var(--indigo-border);
-  /** Change the cloud to stars **/
-  /** Change the sun into the moon **/
-  /** Show the dimples on the moon **/
-}
-
-.toggle--checkbox:checked + .toggle--label .toggle--label-background {
-  left: 60px;
-  width: 5px;
-}
-
-.toggle--checkbox:checked + .toggle--label .toggle--label-background:before {
-  width: 5px;
-  height: 5px;
-  top: -25px;
-}
-
-.toggle--checkbox:checked + .toggle--label .toggle--label-background:after {
-  width: 5px;
-  height: 5px;
-  left: -30px;
-  top: 20px;
-}
-
-.toggle--checkbox:checked + .toggle--label:before {
-  background: var(--white);
-  border-color: var(--gray-border);
-  -webkit-animation-name: switch;
-          animation-name: switch;
-  -webkit-animation-duration: 350ms;
-          animation-duration: 350ms;
-  -webkit-animation-fill-mode: forwards;
-          animation-fill-mode: forwards;
-}
-
-.toggle--checkbox:checked + .toggle--label:after {
-  -webkit-transition-delay: 350ms;
-          transition-delay: 350ms;
-  opacity: 1;
-}
-
-.toggle--label {
-  /** Placeholder element, starting at blue **/
-  width: 200px;
-  height: 100px;
-  background: var(--blue-color);
-  border-radius: 100px;
-  border: 5px solid var(--blue-border);
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  position: relative;
-  -webkit-transition: all 350ms ease-in;
-  transition: all 350ms ease-in;
-  /** The sun cloud and moon stars **/
-  /** Sun/Moon element **/
-  /** Gray dots on the moon **/
-}
-
-.toggle--label-background {
-  width: 10px;
-  height: 5px;
-  border-radius: 5px;
-  position: relative;
-  background: var(--white);
-  left: 135px;
-  top: 45px;
-  -webkit-transition: all 150ms ease-in;
-  transition: all 150ms ease-in;
-}
-
-.toggle--label-background:before {
-  content: "";
-  position: absolute;
-  top: -5px;
-  width: 40px;
-  height: 5px;
-  border-radius: 5px;
-  background: var(--white);
-  left: -20px;
-  -webkit-transition: all 150ms ease-in;
-  transition: all 150ms ease-in;
-}
-
-.toggle--label-background:after {
-  content: "";
-  position: absolute;
-  top: 5px;
-  width: 40px;
-  height: 5px;
-  border-radius: 5px;
-  background: var(--white);
-  left: -10px;
-  -webkit-transition: all 150ms ease-in;
-  transition: all 150ms ease-in;
-}
-
-.toggle--label:before {
-  -webkit-animation-name: reverse;
-          animation-name: reverse;
-  -webkit-animation-duration: 350ms;
-          animation-duration: 350ms;
-  -webkit-animation-fill-mode: forwards;
-          animation-fill-mode: forwards;
-  -webkit-transition: all 350ms ease-in;
-  transition: all 350ms ease-in;
-  content: "";
-  width: 82px;
-  height: 82px;
-  border: 5px solid var(--yellow-border);
-  top: 0px;
-  left: 0px;
-  position: absolute;
-  border-radius: 82px;
-  background: var(--yellow-background);
-}
-
-.toggle--label:after {
-  -webkit-transition-delay: 0ms;
-          transition-delay: 0ms;
-  -webkit-transition: all 250ms ease-in;
-  transition: all 250ms ease-in;
-  position: absolute;
-  content: "";
-  -webkit-box-shadow: var(--gray-dots) -13px 0 0 2px, var(--gray-dots) -24px 14px 0 -2px;
-          box-shadow: var(--gray-dots) -13px 0 0 2px, var(--gray-dots) -24px 14px 0 -2px;
-  left: 143px;
-  top: 23px;
-  width: 10px;
-  height: 10px;
-  background: transparent;
-  border-radius: 50%;
-  opacity: 0;
-}
-
-@-webkit-keyframes switch {
+@-webkit-keyframes background {
   0% {
-    left: 0;
+    -webkit-box-shadow: 0 0 80px -10px #D25419;
+            box-shadow: 0 0 80px -10px #D25419;
   }
-  60% {
-    left: 0;
-    width: 112px;
+  10% {
+    -webkit-box-shadow: 0 0 80px -10px #C625FF;
+            box-shadow: 0 0 80px -10px #C625FF;
+  }
+  30% {
+    -webkit-box-shadow: 0 0 80px -10px #5E25FF;
+            box-shadow: 0 0 80px -10px #5E25FF;
+  }
+  50% {
+    -webkit-box-shadow: 0 0 80px -10px #2596FF;
+            box-shadow: 0 0 80px -10px #2596FF;
+  }
+  70% {
+    -webkit-box-shadow: 0 0 80px -10px #25F2FF;
+            box-shadow: 0 0 80px -10px #25F2FF;
+  }
+  90% {
+    -webkit-box-shadow: 0 0 80px -10px #25FF89;
+            box-shadow: 0 0 80px -10px #25FF89;
   }
   100% {
-    left: 104px;
-    width: 82px;
+    -webkit-box-shadow: 0 800px -10px #D25419;
+            box-shadow: 0 800px -10px #D25419;
   }
 }
 
-@keyframes switch {
+@keyframes background {
   0% {
-    left: 0;
+    -webkit-box-shadow: 0 0 80px -10px #D25419;
+            box-shadow: 0 0 80px -10px #D25419;
   }
-  60% {
-    left: 0;
-    width: 112px;
+  10% {
+    -webkit-box-shadow: 0 0 80px -10px #C625FF;
+            box-shadow: 0 0 80px -10px #C625FF;
+  }
+  30% {
+    -webkit-box-shadow: 0 0 80px -10px #5E25FF;
+            box-shadow: 0 0 80px -10px #5E25FF;
+  }
+  50% {
+    -webkit-box-shadow: 0 0 80px -10px #2596FF;
+            box-shadow: 0 0 80px -10px #2596FF;
+  }
+  70% {
+    -webkit-box-shadow: 0 0 80px -10px #25F2FF;
+            box-shadow: 0 0 80px -10px #25F2FF;
+  }
+  90% {
+    -webkit-box-shadow: 0 0 80px -10px #25FF89;
+            box-shadow: 0 0 80px -10px #25FF89;
   }
   100% {
-    left: 104px;
-    width: 82px;
-  }
-}
-@-webkit-keyframes reverse {
-  0% {
-    left: 104px;
-    width: 82px;
-  }
-  60% {
-    left: 72px;
-    width: 112px;
-  }
-  100% {
-    left: 0;
-  }
-}
-@keyframes reverse {
-  0% {
-    left: 104px;
-    width: 82px;
-  }
-  60% {
-    left: 72px;
-    width: 112px;
-  }
-  100% {
-    left: 0;
+    -webkit-box-shadow: 0 800px -10px #D25419;
+            box-shadow: 0 800px -10px #D25419;
   }
 }
 .portfolio__all-btn {
@@ -914,6 +1015,9 @@ td, th {
 
 .item {
   margin-bottom: 30px;
+}
+.item-popup {
+  display: none;
 }
 .item__container {
   display: -webkit-box;
@@ -1060,20 +1164,21 @@ td, th {
   font-weight: 500;
   font-size: 24px;
   line-height: 28px;
-  color: #000000;
+  color: var(--text-color);
 }
 .review__span {
   font-weight: 300;
   font-size: 16px;
   line-height: 19px;
-  color: #000000;
+  color: var(--text-color);
+  opacity: 0.85;
 }
 .review__text {
   margin: 25px 0 0;
   font-weight: normal;
   font-size: 18px;
   line-height: 1.3;
-  color: #000000;
+  color: var(--text-color);
 }
 .reviews__slider {
   margin-bottom: 105px;
@@ -1496,7 +1601,7 @@ td, th {
 }
 
 .contacts {
-  padding: 60px 0;
+  padding: 60px 0 15px;
 }
 .contacts__flex {
   display: -webkit-box;
@@ -1621,6 +1726,16 @@ td, th {
   left: 0;
   width: 100%;
   height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
   background: #fff;
   -webkit-transition: 0.5s ease-in-out;
   transition: 0.5s ease-in-out;
@@ -1631,6 +1746,7 @@ td, th {
   top: 0;
 }
 .popup__header {
+  width: 100%;
   background: #577BF9;
 }
 .popup__header_wrapper {
@@ -1644,14 +1760,26 @@ td, th {
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
   line-height: 1.4;
 }
+.popup__header_link, .popup__header_text {
+  color: #fff;
+}
+.popup__header_text {
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
 .popup-browser {
   width: 100%;
-  margin: 30px auto;
-  max-width: 85rem;
-}
-.popup-browser img {
+  margin: 0;
+  -webkit-box-flex: 2;
+      -ms-flex-positive: 2;
+          flex-grow: 2;
+  padding: 0;
   display: block;
-  width: 100%;
   height: auto;
 }
 
@@ -1696,6 +1824,10 @@ td, th {
   background: #D25419;
   text-align: center;
 }
+.footer__socials {
+  background: var(--background-plash);
+  border-radius: 16px;
+}
 .footer__socials_item {
   height: 90px;
   -webkit-box-flex: 1;
@@ -1704,6 +1836,13 @@ td, th {
   background-repeat: no-repeat;
   background-position: center;
   background-size: 45px 45px;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+.footer__socials_item:hover {
+  -webkit-transform: translate(0, -5px);
+      -ms-transform: translate(0, -5px);
+          transform: translate(0, -5px);
 }
 
 .copyright {
